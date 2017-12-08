@@ -63,9 +63,35 @@ gulp.task('copy-semantic-ui-calendar-scripts', function() {
     .pipe(gulp.dest('./semantic/dist'));
 });
 
-gulp.task('copy-semantic-ui', ['copy-semantic-ui-calendar-styles', 'copy-semantic-ui-calendar-scripts']);
-
-gulp.task('copy-request', function() {
-  return gulp.src('./node_modules/request/**/*.js')
-    .pipe(gulp.dest('./dist/scripts/request/'));
+gulp.task('copy-semantic-ui-calendar-styles-2-root', function() {
+  return gulp.src('./node_modules/semantic-ui-calendar/dist/*.min.css')
+    .pipe(gulp.dest('./'));
 });
+
+gulp.task('copy-semantic-ui-calendar-scripts-2-root', function() {
+  return gulp.src('./node_modules/semantic-ui-calendar/dist/*.min.js')
+    .pipe(gulp.dest('./'));
+});
+
+gulp.task('copy-semantic-ui-styles-2-root', function() {
+  return gulp.src('./semantic/dist/semantic.min.css')
+    .pipe(gulp.dest('./'));
+});
+
+gulp.task('copy-semantic-ui-scripts-2-root', function() {
+  return gulp.src('./semantic/dist/semantic.min.js')
+    .pipe(gulp.dest('./'));
+});
+
+gulp.task('copy-semantic-ui-calendar', [
+  'copy-semantic-ui-calendar-styles',
+  'copy-semantic-ui-calendar-scripts',
+]);
+
+gulp.task('copy-everything-to-root', [
+  'copy-semantic-ui-styles-2-root',
+  'copy-semantic-ui-scripts-2-root',
+  'copy-semantic-ui-calendar-styles-2-root',
+  'copy-semantic-ui-calendar-scripts-2-root',
+]);
+
