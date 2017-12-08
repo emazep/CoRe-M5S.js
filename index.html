@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"
+    ></script>
+
+    <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
+    <script src="semantic/dist/semantic.min.js"></script>
+
+    <link rel="stylesheet" href="semantic/dist/calendar.min.css" />
+    <script src="semantic/dist/calendar.min.js"></script>
+    
+    <script src="html2canvas.min.js"></script>
+    <script src="FileSaver.min.js"></script>
+    
+    <script src="2017-12-07_tirendiconto.min.js"></script>
+        
+    <title>CoRe M5S</title>
+    
+    <meta name="description" content="Controllo Restituzione M5S">
+    <meta name="keywords" content="M5S,Movimento,restituzione,stipendio,parlamentari">
+    <meta name="author" content="Emanuele Zeppieri">    
+
+    <style>
+        body > .ui.container {
+            padding-top: 2em;
+            padding-bottom: 2em;
+        }
+        
+        .banner3d {
+            background-color: #fff;   
+            color: #202c2d;
+            text-shadow:
+            0 1px #808d93,
+            -1px 0 #cdd2d5,
+            -1px 2px #808d93,
+            -2px 1px #cdd2d5,
+            -2px 3px #808d93;
+        }
+    </style>
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/cookie-bar/cookiebar-latest.min.js"></script>
+
+</head>
+
+<body>
+
+<a href="https://github.com/emazep/CoRe-M5S.js" id="github_ribbon"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/e7bbb0521b397edbd5fe43e7f760759336b5e05f/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677265656e5f3030373230302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png"></a>
+
+<div class="ui container" id="main_content">
+
+    <h1 class="ui dividing header inset-text"><span class="banner3d" style="color: Gold">CoRe M5S</span> (<em>Controllo Restituzione M5S</em>)</h1>
+    
+    <button class="ui compact labeled icon button" onclick="$('#info_page').modal('show')"><i class="info icon"></i>Informazioni</button>
+    
+    <form class="ui form segment" id="search_form">
+    
+        <h3 class="ui dividing header">Scegli il parlamentare del M5S</h3>
+    
+        <div class="field">
+            <label>Parlamentare:</label>
+            <div class="ui selection dropdown" id="parlamentare">
+                
+                <i class="search icon"></i>
+                <div class="default text">Parlamentari del M5S</div>
+                
+                <div class="menu">
+    
+                    <div class="item" data-value="1">
+                        <img class="ui avatar image" src="images/faces/agostinelli.jpg">
+                        AGOSTINELLI Donatella
+                    </div>
+                    <div class="item" data-value="108">
+                        <img class="ui avatar image" src="images/faces/airola.jpg">
+                        AIROLA Alberto
+                    </div>
+                    <div class="item" data-value="7">
+                        <img class="ui avatar image" src="images/faces/basilio.jpg">
+                        BASILIO Tatiana
+                    </div>
+                    <div class="item" data-value="11">
+                        <img class="ui avatar image" src="images/faces/bernini1.jpg">
+                        BERNINI Massimiliano
+                    </div>
+                    <div class="item" data-value="12">
+                        <img class="ui avatar image" src="images/faces/bernini2.jpg">
+                        BERNINI Paolo
+                    </div>
+                    <div class="item" data-value="14">
+                        <img class="ui avatar image" src="images/faces/bonafede.jpg">
+                        BONAFEDE Alfonso
+                    </div>
+                    <div class="item" data-value="116">
+                        <img class="ui avatar image" src="images/faces/buccarella.jpg">
+                        BUCCARELLA Maurizio
+                    </div>
+                    <div class="item" data-value="17">
+                        <img class="ui avatar image" src="images/faces/businarolo.jpg">
+                        BUSINAROLO Francesca
+                    </div>
+                    <div class="item" data-value="19">
+                        <img class="ui avatar image" src="images/faces/cancelleri.jpg">
+                        CANCELLERI Azzurra Pia Maria
+                    </div>
+                    <div class="item" data-value="121">
+                        <img class="ui avatar image" src="images/faces/castaldi.jpg">
+                        CASTALDI Gianluca
+                    </div>
+                    <div class="item" data-value="23">
+                        <img class="ui avatar image" src="images/faces/castelli.jpg">
+                        CASTELLI Laura
+                    </div>
+                    <div class="item" data-value="124">
+                        <img class="ui avatar image" src="images/faces/cioffi.jpg">
+                        CIOFFI Andrea
+                    </div>
+                    <div class="item" data-value="29">
+                        <img class="ui avatar image" src="images/faces/colonnese.jpg">
+                        COLONNESE Vega
+                    </div>
+                    <div class="item" data-value="126">
+                        <img class="ui avatar image" src="images/faces/crimi.jpg">
+                        CRIMI Vito Claudio
+                    </div>
+                    <div class="item" data-value="45">
+                        <img class="ui avatar image" src="images/faces/dibattista.jpg">
+                        DI BATTISTA Alessandro
+                    </div>
+                        <div class="item" data-value="47">
+                        <img class="ui avatar image" src="images/faces/dimaio.jpg">
+                        DI MAIO Luigi
+                    </div>
+                    <div class="item" data-value="48">
+                        <img class="ui avatar image" src="images/faces/distefano.jpg">
+                        DI STEFANO Manlio
+                    </div>
+                    <div class="item" data-value="129">
+                        <img class="ui avatar image" src="images/faces/endrizzi.jpg">
+                        ENDRIZZI Giovanni
+                    </div>
+                    <div class="item" data-value="130">
+                        <img class="ui avatar image" src="images/faces/fattori.jpg">
+                        FATTORI Elena
+                    </div>
+                    <div class="item" data-value="54">
+                        <img class="ui avatar image" src="images/faces/ferraresi.jpg">
+                        FERRARESI Vittorio
+                    </div>
+                    <div class="item" data-value="55">
+                        <img class="ui avatar image" src="images/faces/fico.jpg">
+                        FICO Roberto
+                    </div>
+                    <div class="item" data-value="56">
+                        <img class="ui avatar image" src="images/faces/fraccaro.jpg">
+                        FRACCARO Riccardo
+                    </div>
+                    <div class="item" data-value="57">
+                        <img class="ui avatar image" src="images/faces/frusone.jpg">
+                        FRUSONE Luca
+                    </div>
+                    <div class="item" data-value="133">
+                        <img class="ui avatar image" src="images/faces/giarrusso.jpg">
+                        GIARRUSSO Mario Michele
+                    </div>
+                    <div class="item" data-value="62">
+                        <img class="ui avatar image" src="images/faces/grande.jpg">
+                        GRANDE Marta
+                    </div>
+                    <div class="item" data-value="63">
+                        <img class="ui avatar image" src="images/faces/grillo.jpg">
+                        GRILLO Giulia
+                    </div>
+                    <div class="item" data-value="135">
+                        <img class="ui avatar image" src="images/faces/lezzi.jpg">
+                        LEZZI Barbara
+                    </div>
+                    <div class="item" data-value="66">
+                        <img class="ui avatar image" src="images/faces/liuzzi.jpg">
+                        LIUZZI Mirella
+                    </div>
+                    <div class="item" data-value="67">
+                        <img class="ui avatar image" src="images/faces/lombardi.jpg">
+                        LOMBARDI Roberta
+                    </div>
+                    <div class="item" data-value="138">
+                        <img class="ui avatar image" src="images/faces/martelli.jpg">
+                        MARTELLI Carlo
+                    </div>
+                    <div class="item" data-value="72">
+                        <img class="ui avatar image" src="images/faces/marzana.jpg">
+                        MARZANA Maria
+                    </div>
+                    <div class="item" data-value="143">
+                        <img class="ui avatar image" src="images/faces/morra.jpg">
+                        MORRA Nicola
+                    </div>
+                    <div class="item" data-value="145">
+                        <img class="ui avatar image" src="images/faces/nugnes.jpg">
+                        NUGNES Paola
+                    </div>
+                    <div class="item" data-value="84">
+                        <img class="ui avatar image" src="images/faces/rizzo.jpg">
+                        RIZZO Gianluca
+                    </div>
+                    <div class="item" data-value="87">
+                        <img class="ui avatar image" src="images/faces/ruocco.jpg">
+                        RUOCCO Carla
+                    </div>
+                    <div class="item" data-value="88">
+                        <img class="ui avatar image" src="images/faces/sarti.jpg">
+                        SARTI Giulia
+                    </div>
+                    <div class="item" data-value="91">
+                        <img class="ui avatar image" src="images/faces/sibilia.jpg">
+                        SIBILIA Carlo
+                    </div>
+                    <div class="item" data-value="92">
+                        <img class="ui avatar image" src="images/faces/sorial.jpg">
+                        SORIAL Girgis Giorgio
+                    </div>
+                    <div class="item" data-value="156">
+                        <img class="ui avatar image" src="images/faces/taverna.jpg">
+                        TAVERNA Paola
+                    </div>
+                    <div class="item" data-value="97">
+                        <img class="ui avatar image" src="images/faces/tofalo.jpg">
+                        TOFALO Angelo
+                    </div>
+                    <div class="item" data-value="98">
+                        <img class="ui avatar image" src="images/faces/toninelli.jpg">
+                        TONINELLI Danilo
+                    </div>
+                    <div class="item" data-value="104">
+                        <img class="ui avatar image" src="images/faces/vignaroli.jpg">
+                        VIGNAROLI Stefano
+                    </div>
+                    <div class="item" data-value="105">
+                        <img class="ui avatar image" src="images/faces/villarosa.jpg">
+                        VILLAROSA Alessio Mattia
+                    </div>
+
+               </div>
+            </div>
+        </div>
+    
+        <h3 class="ui dividing header">Scegli il periodo</h3>
+        
+        <div class="inline fields">
+            <div class="field">
+                <div class="ui radio checkbox">
+                    <input name="timeframe" checked="checked" type="radio" value="max_timeframe">
+                    <label>Da inizio legislatura ad oggi</label>
+                </div>
+            </div>
+            <div class="field">
+                <div class="ui radio checkbox">
+                    <input name="timeframe" type="radio" value="custom_timeframe">
+                    <label>Periodo specifico</label>
+                </div>
+            </div>
+        </div>
+    
+        <div class="seven wide two fields" id="dates_block">
+            <div class="three wide field">
+                <label>Dal mese:</label>
+                <div class="ui calendar" id="initial_month">
+                    <div class="ui input left icon">
+                        <i class="calendar icon"></i>
+                        <input placeholder="Mese e anno" type="text" name="initial_month">
+                    </div>
+                </div>
+            </div>
+            <div class="three wide field">
+                <label>Al mese:</label>
+                <div class="ui calendar" id="final_month">
+                    <div class="ui input left icon">
+                        <i class="calendar icon"></i>
+                        <input placeholder="Mese e anno" type="text" name="final_month">
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <h3 class="ui dividing header">Calcola la somma totale restituita dal parlamentare nel periodo selezionato</h3>
+        <button class="ui submit teal button" type="submit">Esegui</button>
+    
+    </form>
+
+    <div class="ui equal width grid">
+        <div class="row">
+              <div class="column left aligned">
+                  © 2017 Emanuele Zeppieri
+              </div>
+              <div class="column right aligned">
+                  Ver. 0.0.0.2017-12-07
+              </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="ui mini modal" id="form_error">
+    <div class="header">Dati immessi non validi</div>
+    <div class="content">
+        <p id="error_message"></p>
+    </div>
+    <div class="actions">
+        <div class="ui approve button">OK</div>
+    </div>
+</div>
+
+<div class="ui basic modal" id="info_page">
+
+    <div class="content">
+    
+        <div class="ui yellow message">
+            <p>
+            <em>CoRe M5S</em> nasce come iniziativa privata, spontanea, libera e gratuita dell'autore,
+            il quale non è affiliato in alcun modo né ha alcun contatto con il Movimento 5 Stelle.
+            Il codice sorgente dell'applicazione è rilasciato sotto licenza MIT.
+            </p>
+        </div>
+    
+        <h1>Domande e risposte</h1>
+
+        <div class="ui inverted segment">
+            <h3>A cosa serve quest'applicazione?</h3>
+            <h4 class="ui horizontal inverted divider"><i class="icon diamond"></i></h4>
+            <div>
+                Attraverso il sito <a href="https://www.beppegrillo.it/tirendiconto.it/trasparenza/" target="_blank">Ti rendi conto?!?!?!?</a>
+                è possibile controllare le somme restituite dai parlamentari del Movimento 5 Stelle. Tuttavia tale verifica può essere effettuata
+                soltanto su un singolo mese alla volta, rendendo così disagevole il calcolo dell'importo totale restituito da un parlamentare
+                in un arco di tempo più ampio. L'applicazione <em>CoRe M5S</em> colma questa lacuna, permettendo di controllare facilmente
+                l'importo totale restituito da ogni parlamentare in un intervallo di tempo arbitrario. Inoltre CoRe M5S offre una sintesi
+                dei dati che dovrebbe risultare più chiara e leggibile.
+            </div>
+        </div>
+
+        <div class="ui inverted segment">
+            <h3>I dati forniti da CoRe M5S sono attendibili?</h3>
+            <h4 class="ui horizontal inverted divider"><i class="icon diamond"></i></h4>
+            <div>
+                Certamente: i dati mostrati da CoRe M5S sono esattamente quelli pubblicati su
+                <a href="https://www.beppegrillo.it/tirendiconto.it/trasparenza/" target="_blank">Ti rendi conto?!?!?!?</a>,
+                che vengono prelevati e utilizzati senza alcuna alterazione.
+                
+                Fanno eccezione soltanto i primi tre mesi della legislatura (marzo, aprile, maggio del 2013) per i quali, limitatamente ad
+                alcuni parlamentari, sul predetto sito non sono presenti i dati in formato testuale (sono presenti soltanto le copie fotografiche
+                delle ricevute dei bonifici, peraltro di non chiarissima interpretazione, da cui non è possibile estrarre le informazioni in automatico).
+                Limitatamente ai soli predetti tre mesi ed ai soli parlamentari che in tale periodo non hanno pubblicato i dati in formato testuale,
+                sono stati utilizzati i seguenti valori presuntivi:
+                
+                <div class="ui bulleted list">
+                    <div class="item">stipendio mensile percepito: 5.000 Euro;</div>
+                    <div class="item">restituzione mensile stipendio: 2.000 Euro;</div>
+                    <div class="item">rimborsi mensili percepiti: 7.000 Euro;</div>
+                    <div class="item">restituzione mensile rimborsi: 3.000 Euro;</div>
+                </div>
+                
+                derivanti da una stima dei valori medi, (largamente) <em>favorevole</em> al parlamentare
+                (ovvero stipendi e rimborsi sottostimati, restituzioni sovrastimate).
+                Tutto questo al netto di bug, che nel software sono sempre possibili. Tuttavia non appena segnalati,
+                gli eventuali bug verranno prontamente corretti.
+                D'altro canto, essendo il codice sorgente di CoRe M5S aperto, chiunque può controllarne la correttezza.
+            </div>
+        </div>
+
+        <div class="ui inverted segment">
+            <h3>Perché non sono presenti tutti i parlamentari del M5S?</h3>
+            <h4 class="ui horizontal inverted divider"><i class="icon diamond"></i></h4>
+            <div>
+                L'aggiunta dei parlamentari richiede un certo lavoro: per ora ne sono stati inseriti 43, tra i più noti.
+                In futuro verranno aggiunti tutti gli altri. Chi volesse aiutare in quest'attività, è pregato di farlo attraverso
+                una <em>pull request</em> attraverso GitHub.
+            </div>
+        </div>
+
+        <div class="ui inverted segment">
+            <h3>Perché il mese finale mostrato nei risultati è diverso da quello selezionato?</h3>
+            <h4 class="ui horizontal inverted divider"><i class="icon diamond"></i></h4>
+            <div>
+                Perché non è detto che i mesi selezionati siano tutti disponibili
+                (sul sito <a href="https://www.beppegrillo.it/tirendiconto.it/trasparenza/" target="_blank">Ti rendi conto?!?!?!?</a>).
+                CoRe M5S permette di scegliere qualsiasi mese come fine del periodo,
+                ma poi necessariamente <em>deve fermarsi</em> all'ultimo mese per cui sono disponibili i dati per il parlamentare selezionato.
+            </div>
+        </div>
+
+        <div class="ui inverted segment">
+            <h3>L'esportazione dei risultati come immagine non funziona bene!</h3>
+            <h4 class="ui horizontal inverted divider"><i class="icon diamond"></i></h4>
+            <div>
+                Risposta breve: lo so. Risposta lunga: non è semplice da fare interamente client-side (in particolar modo su dispositivi touch)
+                come fa quest'applicazione, considerando che si è inteso generare i risultati
+                in formato testuale, perché ciò permette di il copia e incolla degli stessi. (L'aiuto su questa funzionalità
+                dell'applicazione, purché fattivo, sarà grandemente apprezzato).
+                Workaround, in ordine di preferenza: utilizzate un browser recente (preferibilmente Firefox o Chrome),
+                preferibilmente su un computer e non un dispositivo mobile; in estremo subordine, fate uno screenshot.
+            </div>
+        </div>
+
+        <div class="ui inverted segment">
+            <h3>Come si può contribuire al progetto?</h3>
+            <h4 class="ui horizontal inverted divider"><i class="icon diamond"></i></h4>
+            <div>
+                <p>
+                Attraverso <a href="https://github.com/emazep/CoRe-M5S">GitHub</a>. La documentazione disponibile è tuttavia pressoché inesistente,
+                né è prevedibile che ne venga aggiunta a breve termine (almeno non dall'autore del progetto).
+                Per contribuire è necessario quindi possedere una buona familiarità con le tecnologie utilizzate nell'applicazione
+                in quanto, per comprenderne il funzionamento, sarà necessario esaminarne il codice sorgente.
+                Le tecnologie utilizzate nell'applicazione sono:
+                </p>
+                <div class="ui bulleted list">
+                    <div class="item">HTML5;</div>
+                    <div class="item">CSS;</div>
+                    <div class="item">JavaScript;</div>
+                    <div class="item">jQuery;</div>
+                    <div class="item">Semantic UI;</div>
+                    <div class="item">Python (per gli script offline di prelievo dei dati);</div>
+                </div>
+                
+                mentre gli strumenti di sviluppo adottati sono:
+                
+                <div class="ui bulleted list">
+                    <div class="item">Node.js;</div>
+                    <div class="item">gulp;</div>
+                    <div class="item">Git.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ui inverted segment">
+            <h3>Posso utilizzare per conto mio quest'applicazione e modificarla?</h3>
+            <h4 class="ui horizontal inverted divider"><i class="icon diamond"></i></h4>
+            <div>
+                Risposta breve: sì. Risposta lunga: il codice sorgente di CoRe M5S è rilasciato sotto licenza MIT,
+                una delle licenze più permissive in assoluto. In sintesi si può utilizzare quest'applicazione
+                per qualsiasi scopo (anche commerciale) e la si può modificare a proprio piacimento,
+                purché venga conservata l'attribuzione del codice sorgente all'autore originario,
+                attraverso l'inclusione della predetta licenza nel codice redistribuito.
+            </div>
+        </div>
+
+        <div class="ui inverted segment">
+            <h3>Che significato ha il numero di versione di CoRe M5S?</h3>
+            <h4 class="ui horizontal inverted divider"><i class="icon diamond"></i></h4>
+            <div>
+                CoRe M5S usa il <a href="http://semver.org/" target="_blank">Semantic Versioning</a>, con l'aggiunta
+                di un quarto campo dopo il campo PATCH,
+                che viene aggiornato se e solo se vengono aggiornati i dati delle restituzioni prelevati dal sito
+                <a href="https://www.beppegrillo.it/tirendiconto.it/trasparenza/" target="_blank">Ti rendi conto?!?!?!?</a>
+                (il campo predetto contiene la data, in formato AAAA-MM-GG, dell'ultima acquisizione dei dati effettuata).
+            </div>
+        </div>
+
+    </div>
+
+    <div class="actions">
+        <div class="ui green ok inverted button">
+            <i class="checkmark icon"></i>
+            Chiudi
+        </div>
+    </div>
+
+</div>
+
+
+<div class="ui basic modal" id="results">
+
+    <div class="ui header">
+        <p>
+            <img class="ui bottom aligned tiny circular image" src="" id="user_pic_results">
+            <span style="display: inline-block; margin-left:1em">
+                <i style="font-size: 2rem" id="user_name_results"></i>
+                <br>Periodo: <i id="initial_month_results"></i> - <i id="final_month_results"></i>
+            </span>
+        </p>
+        <h4 style="color: Yellow" id="mesi_presuntivi"></h4>
+    </div>
+
+    <div class="ui small inverted teal three statistics" style="margin-top: 1em; margin-bottom: 1em">
+        <div class="ui statistic">
+            <div class="value" id="stipendio_rimborso_tot"></div>
+            <div class="label">Tot. percepito</div>
+        </div>
+        <div class="ui statistic">
+            <div class="value" id="totale_restituito_tot"></div>
+            <div class="label">Tot. restituito</div>
+        </div>
+        <div class="ui statistic">
+            <div class="value" id="perc_totale_restituito_tot"></div>
+            <div class="label">Perc. restituito</div>
+        </div>
+    </div>
+    <div class="ui small inverted violet three statistics" style="margin-top: 1em; margin-bottom: 1em">
+        <div class="ui statistic">
+            <div class="value" id="stipendio_tot"></div>
+            <div class="label">Stipendio net. percepito</div>
+        </div>
+        <div class="ui statistic">
+            <div class="value" id="stipendio_restituito_tot"></div>
+            <div class="label">Stipendio restituito</div>
+        </div>
+        <div class="ui statistic">
+            <div class="value" id="perc_stipendio_restituito_tot"></div>
+            <div class="label">Perc. restituito</div>
+        </div>
+    </div>
+    <div class="ui small inverted orange three statistics" style="margin-top: 1em; margin-bottom: 1em">
+        <div class="ui statistic">
+            <div class="value" id="rimborso_tot"></div>
+            <div class="label">Rimborsi percepiti</div>
+        </div>
+        <div class="ui statistic">
+            <div class="value" id="rimborso_restituito_tot"></div>
+            <div class="label">Rimborsi restituiti</div>
+        </div>
+        <div class="ui statistic">
+            <div class="value" id="perc_rimborso_restituito_tot"></div>
+            <div class="label">Perc. restituiti</div>
+        </div>
+    </div>
+
+    <div class="ui equal width grid">
+        <div class="row bottom aligned">
+            <div class="column left aligned">
+                © 2017 Emanuele Zeppieri - <span style="text-decoration: underline">corem5s.github.io</span>
+            </div>
+            <div class="actions column right aligned" id="results_actions">
+                <div class="ui blue save inverted button" id="results2image">
+                    <i class="save icon"></i>
+                    Salva come immagine
+                </div>
+                <div class="ui green ok inverted button" id="close_results">
+                    <i class="checkmark icon"></i>
+                    Chiudi
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<script type="text/javascript">
+    "use strict";
+    
+    $(".dropdown").dropdown();
+    $(".checkbox").checkbox();
+    
+    var month_names = ['Gennaio', 'Febbraio', 'Marzo', 'Aprile', 'Maggio', 'Giugno', 'Luglio', 'Agosto', 'Settembre', 'Ottobre', 'Novembre', 'Dicembre'];
+    
+    var calendar_settings = {
+        type: "month",
+        minDate: new Date(2013, 2),
+        maxDate: new Date(2018, 5),
+        text: {
+            days: ['D', 'L', 'M', 'M', 'G', 'V', 'S'],
+            months: month_names,
+            monthsShort: ['Gen', 'Feb', 'Mar', 'Apr', 'Mag', 'Giu', 'Lug', 'Ago', 'Set', 'Ott', 'Nov', 'Dic'],
+            today: 'Oggi',
+            now: 'Adesso',
+            am: 'AM',
+            pm: 'PM'
+        }
+    }
+    $("#initial_month").calendar(calendar_settings);
+    $("#final_month").calendar(calendar_settings);
+    
+    var
+        $dates_radio = $("input[name='timeframe']"),
+        $dates_block = $("#dates_block")
+    ;
+        
+    function showhide_obj(current_value, show_value, $togglable_obj) {
+        if ( current_value == show_value ) {
+            $togglable_obj.show("slow")
+        } else {
+            $togglable_obj.hide("slow")
+        }
+    }
+
+    function showhide_dates_onreload() {
+        if ( $("input[name='timeframe']:checked").val() == "max_timeframe" ) {
+            $dates_block.hide()
+        }
+    }
+
+    $dates_radio.on("change", function() {
+        showhide_obj( $(this).val(), "custom_timeframe", $dates_block )
+    });
+    showhide_dates_onreload();
+    
+    var $form = $("#search_form");
+    
+    function get_form_values() {
+        var $form = $("#search_form");
+        return {
+            parlamentare_id  : $("#parlamentare").dropdown('get value'),
+            parlamentare_name: $("#parlamentare").dropdown('get text').trim(),
+            timeframe        : $("input[name='timeframe']:checked").val(),
+            initial_month    : $form.form("get value", "initial_month"),
+            final_month      : $form.form("get value", "final_month")
+        }
+    }
+
+    function month_formvalue2num(date_string) {
+        var month_parts = date_string.split(" ");
+        return month_names.indexOf( month_parts[0] ) + 1 + ( month_parts[1] - 2013 ) * 12
+    }
+
+    function month_num2text(month_num) {
+        var year = Math.floor(month_num/12) + 2013;
+        var month_name = month_names[month_num % 12];
+        return month_name + ' ' + year
+    }
+
+    
+    $form.submit( function(event) {
+        var form_values = get_form_values();
+
+        if ( form_values.parlamentare_id == null || form_values.parlamentare_id == '' ) {
+            $("#error_message").text("Bisogna selezionare un parlamentare.");
+            $("#form_error").modal('show');
+            return false
+        }
+        
+        var initial_month_num;
+        var final_month_num;
+        
+        if ( form_values.timeframe == 'custom_timeframe' ) {
+
+            var initial_month = form_values.initial_month;
+            var final_month   = form_values.final_month;
+
+            if ( initial_month == null || initial_month == '' || final_month == null || final_month == '' ) {
+                $("#error_message").text("Se si seleziona l'immissione di un periodo specifico, i mesi iniziale e finale devono essere entrambi valorizzati.");
+                $("#form_error").modal('show');
+                return false
+            }  
+
+            initial_month_num = month_formvalue2num(initial_month);
+            final_month_num   = month_formvalue2num(final_month);
+
+            if ( isNaN(initial_month_num) || isNaN(final_month_num) ) {
+                $("#error_message").text("I valori immessi per i mesi non sono validi.");
+                $("#form_error").modal('show');
+                return false
+            }
+            
+            if (initial_month_num > final_month_num) {
+                $("#error_message").text("Il mese finale non può essere precedente a quello inziale.");
+                $("#form_error").modal('show');
+                return false
+            }             
+        } else {
+            initial_month_num = 3;
+            final_month_num   = 65;
+            form_values.initial_month = 'Marzo 2013';
+        }
+        
+        var
+            totale_restituito_tot    = 0,
+            stipendio_tot            = 0,
+            stipendio_restituito_tot = 0,
+            rimborso_tot             = 0,
+            rimborso_restituito_tot  = 0,
+            presuntivi_month_nums    = []
+        ;
+        var user = form_values.parlamentare_id;
+        var final_month_num_found;
+        for ( var month = initial_month_num; month <= final_month_num; month++ ) {
+            var month_data = tirendiconto_fulldata[user][month];
+            if ( month_data == null ) { continue }
+            final_month_num_found = month;
+            totale_restituito_tot    += month_data[0];
+            stipendio_tot            += month_data[1];
+            stipendio_restituito_tot += month_data[2];
+            rimborso_tot             += month_data[3];
+            rimborso_restituito_tot  += month_data[4];
+            if ( month_data[5] ) {
+                presuntivi_month_nums.push(month);
+            }
+        }
+        
+        display_user_results(
+            form_values.parlamentare_name,
+            form_values.initial_month, final_month_num_found,
+            totale_restituito_tot, stipendio_tot, stipendio_restituito_tot, rimborso_tot, rimborso_restituito_tot,
+            presuntivi_month_nums
+        );
+        
+        return false;
+    });
+    
+    function format_currency(value) {
+        return value.toLocaleString(
+            'it-IT', {
+                maximumFractionDigits: 2,
+                style                : 'currency',
+                currency             : 'EUR'
+            }
+        ).replace(/,\d\d/, '')
+    }
+
+    function format_percent(value) {
+        return value.toLocaleString(
+            'it-IT', {
+                maximumFractionDigits: 2,
+                style                : 'percent'
+            }
+        )
+    }
+
+    function display_user_results(
+        user_name, initial_month, final_month_num, totale_restituito_tot,
+        stipendio_tot, stipendio_restituito_tot, rimborso_tot, rimborso_restituito_tot,
+        presuntivi_month_nums
+    ) {
+        var selected_user_pic_src = $(".item.active.selected").children('img').attr('src');
+        $("#user_pic_results").attr('src', selected_user_pic_src);
+        $("#user_name_results").text(user_name);
+        $("#initial_month_results").text(initial_month);
+        $("#final_month_results").text( month_num2text(final_month_num) );
+
+        var presuntivi_months_text = '';
+        var presuntivi_month_nums_length = presuntivi_month_nums.length;
+        for (i = 0; i < presuntivi_month_nums_length; i++) {
+        	presuntivi_months_text += month_num2text( presuntivi_month_nums[i]-1 ) + ', '
+        	;console.log(presuntivi_month_nums[i])
+        }
+        if (presuntivi_months_text) {
+        	$("#mesi_presuntivi").text(
+        		'Gli importi relativi '                                       +
+        		(presuntivi_month_nums_length == 1 ? 'al mese ' : 'ai mesi ') +
+        		presuntivi_months_text + 'sono presuntivi'
+        	).show()
+        } else {
+        	$("#mesi_presuntivi").hide()
+        }
+        
+        var totale_percepito_tot = stipendio_tot + rimborso_tot;
+        $("#stipendio_rimborso_tot")    .text( format_currency( Math.round(totale_percepito_tot ) )            );
+        $("#totale_restituito_tot")     .text( format_currency( Math.round(totale_restituito_tot) )            );
+        $("#perc_totale_restituito_tot").text( format_percent ( totale_restituito_tot / totale_percepito_tot ) );
+
+        $("#stipendio_tot")                .text( format_currency( Math.round(stipendio_tot ) )               );
+        $("#stipendio_restituito_tot")     .text( format_currency( Math.round(stipendio_restituito_tot) )     );
+        $("#perc_stipendio_restituito_tot").text( format_percent ( stipendio_restituito_tot / stipendio_tot ) );
+
+        $("#rimborso_tot")                .text( format_currency( Math.round(rimborso_tot ) )              );
+        $("#rimborso_restituito_tot")     .text( format_currency( Math.round(rimborso_restituito_tot) )    );
+        $("#perc_rimborso_restituito_tot").text( format_percent ( rimborso_restituito_tot / rimborso_tot ) );
+
+        $("#results").modal('show');
+    }
+
+    function results2image() {
+        var filename =
+            $("#user_name_results")    .text().replace(/ /g,"_") + '_' +
+            $("#initial_month_results").text().replace(/ /g,"-") + '_' +
+            $("#final_month_results")  .text().replace(/ /g,"-") + '.png'
+        ;
+        
+        var body_original_color = $('body').css('background-color');
+        $('body').css('background-color', 'Black');
+        $('#github_ribbon').hide();
+        $('#main_content').hide();
+        $('#results_actions').hide();
+        
+        html2canvas(document.body).then( function(canvas) {
+            $('body').css('background-color', body_original_color);
+            $('#main_content').show();
+            $('#github_ribbon').show();
+            $('#results_actions').show();
+            
+            canvas.toBlob( function(blob) {
+                saveAs(blob, filename)
+            })
+        })
+    }
+    
+    $("#results2image").click(results2image)
+</script>
+
+</body>
+
+</html>

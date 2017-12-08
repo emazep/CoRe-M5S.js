@@ -1,0 +1,6 @@
+/.project
+/.settings/
+node_modules
+semantic/dist/*
+semantic/gulpfile.js
+semantic/tasks
