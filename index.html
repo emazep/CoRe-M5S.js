@@ -318,7 +318,7 @@
                   © 2017 Emanuele Zeppieri
               </div>
               <div class="column right aligned">
-                  Ver. 2.0.0.2017-12-07
+                  Ver. 3.0.0.2017-12-07
               </div>
         </div>
     </div>
@@ -768,7 +768,6 @@
         var presuntivi_month_nums_length = presuntivi_month_nums.length;
         for (i = 0; i < presuntivi_month_nums_length; i++) {
         	presuntivi_months_text += month_num2text( presuntivi_month_nums[i]-1 ) + ', '
-        	;console.log(presuntivi_month_nums[i])
         }
         if (presuntivi_months_text) {
         	$("#mesi_presuntivi").text(
@@ -783,23 +782,20 @@
         var totale_percepito_tot = stipendio_tot + rimborso_tot;
         $("#stipendio_rimborso_tot")    .text( format_currency( Math.round(totale_percepito_tot ) )            );
         $("#totale_restituito_tot")     .text( format_currency( Math.round(totale_restituito_tot) )            );
-        $("#perc_totale_restituito_tot").text( format_percent (
-        		totale_percepito_tot > 0 ? (totale_restituito_tot / totale_percepito_tot) : 0
-        	)
+        $("#perc_totale_restituito_tot").text(
+        		totale_percepito_tot > 0 ? format_percent(totale_restituito_tot / totale_percepito_tot) :  '-'
         );
 
         $("#stipendio_tot")                .text( format_currency( Math.round(stipendio_tot ) )               );
         $("#stipendio_restituito_tot")     .text( format_currency( Math.round(stipendio_restituito_tot) )     );
-        $("#perc_stipendio_restituito_tot").text( format_percent (
-        		stipendio_tot > 0 ? (stipendio_restituito_tot / stipendio_tot) : 0
-        	)
+        $("#perc_stipendio_restituito_tot").text(
+        		stipendio_tot > 0 ? format_percent(stipendio_restituito_tot / stipendio_tot) : '-'
         );
 
         $("#rimborso_tot")                .text( format_currency( Math.round(rimborso_tot ) )              );
         $("#rimborso_restituito_tot")     .text( format_currency( Math.round(rimborso_restituito_tot) )    );
-        $("#perc_rimborso_restituito_tot").text( format_percent (
-        		rimborso_tot > 0 ? (rimborso_restituito_tot / rimborso_tot) : 0
-        	)
+        $("#perc_rimborso_restituito_tot").text(
+        		rimborso_tot > 0 ? format_percent(rimborso_restituito_tot / rimborso_tot) : '-'
         );
 
         $("#results").modal('show');
