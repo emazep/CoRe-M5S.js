@@ -318,7 +318,7 @@
                   © 2017 Emanuele Zeppieri
               </div>
               <div class="column right aligned">
-                  Ver. 1.0.0.2017-12-07
+                  Ver. 2.0.0.2017-12-07
               </div>
         </div>
     </div>
@@ -504,7 +504,7 @@
             <img class="ui bottom aligned tiny circular image" src="" id="user_pic_results">
             <span style="display: inline-block; margin-left:1em">
                 <i style="font-size: 2rem" id="user_name_results"></i>
-                <br>Periodo: <i id="initial_month_results"></i> - <i id="final_month_results"></i>
+                <br>Periodo: <i id="initial_month_results"></i><i id="final_month_results"></i>
             </span>
         </p>
         <h4 style="color: Yellow" id="mesi_presuntivi"></h4>
@@ -719,7 +719,7 @@
             form_values.parlamentare_name,
             form_values.initial_month, final_month_num_found,
             totale_restituito_tot, stipendio_tot, stipendio_restituito_tot, rimborso_tot, rimborso_restituito_tot,
-            presuntivi_month_nums
+            presuntivi_month_nums, form_values.final_month
         );
         
         return false;
@@ -747,14 +747,23 @@
     function display_user_results(
         user_name, initial_month, final_month_num, totale_restituito_tot,
         stipendio_tot, stipendio_restituito_tot, rimborso_tot, rimborso_restituito_tot,
-        presuntivi_month_nums
+        presuntivi_month_nums,
+        final_month
     ) {
         var selected_user_pic_src = $(".item.active.selected").children('img').attr('src');
         $("#user_pic_results").attr('src', selected_user_pic_src);
         $("#user_name_results").text(user_name);
         $("#initial_month_results").text(initial_month);
-        $("#final_month_results").text( month_num2text(final_month_num-1) );
-
+        
+        var final_month_display = final_month_num === undefined ? final_month : month_num2text(final_month_num-1);
+        
+        if ( initial_month == final_month ) {
+        	$("#final_month_results").hide()
+        } else {
+            $("#final_month_results").text( ' - ' + final_month_display );
+            $("#final_month_results").show()
+        }
+        
         var presuntivi_months_text = '';
         var presuntivi_month_nums_length = presuntivi_month_nums.length;
         for (i = 0; i < presuntivi_month_nums_length; i++) {
@@ -774,15 +783,24 @@
         var totale_percepito_tot = stipendio_tot + rimborso_tot;
         $("#stipendio_rimborso_tot")    .text( format_currency( Math.round(totale_percepito_tot ) )            );
         $("#totale_restituito_tot")     .text( format_currency( Math.round(totale_restituito_tot) )            );
-        $("#perc_totale_restituito_tot").text( format_percent ( totale_restituito_tot / totale_percepito_tot ) );
+        $("#perc_totale_restituito_tot").text( format_percent (
+        		totale_percepito_tot > 0 ? (totale_restituito_tot / totale_percepito_tot) : 0
+        	)
+        );
 
         $("#stipendio_tot")                .text( format_currency( Math.round(stipendio_tot ) )               );
         $("#stipendio_restituito_tot")     .text( format_currency( Math.round(stipendio_restituito_tot) )     );
-        $("#perc_stipendio_restituito_tot").text( format_percent ( stipendio_restituito_tot / stipendio_tot ) );
+        $("#perc_stipendio_restituito_tot").text( format_percent (
+        		stipendio_tot > 0 ? (stipendio_restituito_tot / stipendio_tot) : 0
+        	)
+        );
 
         $("#rimborso_tot")                .text( format_currency( Math.round(rimborso_tot ) )              );
         $("#rimborso_restituito_tot")     .text( format_currency( Math.round(rimborso_restituito_tot) )    );
-        $("#perc_rimborso_restituito_tot").text( format_percent ( rimborso_restituito_tot / rimborso_tot ) );
+        $("#perc_rimborso_restituito_tot").text( format_percent (
+        		rimborso_tot > 0 ? (rimborso_restituito_tot / rimborso_tot) : 0
+        	)
+        );
 
         $("#results").modal('show');
     }
