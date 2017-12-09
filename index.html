@@ -36,7 +36,7 @@
     <script src="html2canvas.min.js"></script>
     <script src="FileSaver.min.js"></script>
     
-    <script src="2017-12-07_tirendiconto.min.js"></script>
+    <script src="2017-12-09_tirendiconto.min.js"></script>
         
     <title>CoRe M5S</title>
     
@@ -100,9 +100,25 @@
                         <img class="ui avatar image" src="images/faces/airola.jpg">
                         AIROLA Alberto
                     </div>
+                    <div class="item" data-value="2">
+                        <img class="ui avatar image" src="images/faces/alberti.jpg">
+                        ALBERTI Ferdinando
+                    </div>
+                    <div class="item" data-value="6">
+                        <img class="ui avatar image" src="images/faces/baroni.jpg">
+                        BARONI Massimo Enrico
+                    </div>
                     <div class="item" data-value="7">
                         <img class="ui avatar image" src="images/faces/basilio.jpg">
                         BASILIO Tatiana
+                    </div>
+                    <div class="item" data-value="8">
+                        <img class="ui avatar image" src="images/faces/battelli.jpg">
+                        BATTELLI Sergio
+                    </div>
+                    <div class="item" data-value="10">
+                        <img class="ui avatar image" src="images/faces/benedetti.jpg">
+                        BENEDETTI Silvia
                     </div>
                     <div class="item" data-value="11">
                         <img class="ui avatar image" src="images/faces/bernini1.jpg">
@@ -112,9 +128,25 @@
                         <img class="ui avatar image" src="images/faces/bernini2.jpg">
                         BERNINI Paolo
                     </div>
+                    <div class="item" data-value="111">
+                        <img class="ui avatar image" src="images/faces/bertorotta.jpg">
+                        BERTOROTTA Ornella
+                    </div>
+                    <div class="item" data-value="13">
+                        <img class="ui avatar image" src="images/faces/bianchi.jpg">
+                        BIANCHI Nicola
+                    </div>
+                    <div class="item" data-value="113">
+                        <img class="ui avatar image" src="images/faces/blundo.jpg">
+                        BLUNDO Rosetta Enza
+                    </div>
                     <div class="item" data-value="14">
                         <img class="ui avatar image" src="images/faces/bonafede.jpg">
                         BONAFEDE Alfonso
+                    </div>
+                    <div class="item" data-value="115">
+                        <img class="ui avatar image" src="images/faces/bottici.jpg">
+                        BOTTICI Laura
                     </div>
                     <div class="item" data-value="116">
                         <img class="ui avatar image" src="images/faces/buccarella.jpg">
@@ -318,7 +350,7 @@
                   © 2017 Emanuele Zeppieri
               </div>
               <div class="column right aligned">
-                  Ver. 3.0.3.2017-12-07
+                  Ver. 5.0.0.2017-12-09
               </div>
         </div>
     </div>
@@ -346,8 +378,20 @@
             Il codice sorgente dell'applicazione è rilasciato sotto licenza MIT.
             </p>
         </div>
-    
-        <h1>Domande e risposte</h1>
+
+        <div class="ui equal width grid">
+            <div class="row bottom aligned">
+                <div class="column left aligned">
+                    <div style="font-size: 2em">Domande e risposte</div>
+                </div>
+                <div class="actions column right aligned" id="results_actions">
+                    <div class="ui green ok inverted button" id="close_results">
+                        <i class="checkmark icon"></i>
+                        Indietro
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <div class="ui inverted segment">
             <h3>A cosa serve quest'applicazione?</h3>
@@ -368,30 +412,57 @@
             <div>
                 Certamente: i dati mostrati da CoRe M5S sono esattamente quelli pubblicati su
                 <a href="https://www.beppegrillo.it/tirendiconto.it/trasparenza/" target="_blank">Ti rendi conto?!?!?!?</a>,
-                che vengono prelevati e utilizzati senza alcuna alterazione.
+                che vengono prelevati e utilizzati senza alcuna alterazione, con l'eccezione del caso descritto nella risposta successiva.
+                Per motivi di leggibilità, gli importi mostrati da CoRe M5S sono arrotondati all'unità di Euro, mentre gli
+                importi su
+                <a href="https://www.beppegrillo.it/tirendiconto.it/trasparenza/" target="_blank">Ti rendi conto?!?!?!?</a>
+                appaiono al centesimo di Euro: tra i due potrà pertanto esservi una differenza massima di 50 centesimi di Euro.
+                Si rimarca inoltre che, essendo il codice sorgente di CoRe M5S aperto, chiunque ha la possibilità di
+                controllarne la correttezza.
+            </div>
+        </div>
+
+        <div class="ui inverted segment">
+            <h3>Sono emerse criticità particolari nel reperimento dei dati?</h3>
+            <h4 class="ui horizontal inverted divider"><i class="icon diamond"></i></h4>
+            <div>
+                Limitatamente ai soli mesi di Marzo, Aprile e Maggio 2013 (ovvero i primi 3 mesi della legislatura), a causa
+                di un diverso formato dei dati pubbicati sul sito
+                <a href="https://www.beppegrillo.it/tirendiconto.it/trasparenza/" target="_blank">Ti rendi conto?!?!?!?</a>,
+                sono emersi i seguenti due problemi:
+                <div class="ui inverted ordered list">
+                    <div class="item">
+                        per alcuni parlamentari, i dati in <em>formato testuale</em> sono assenti (sono presenti soltanto
+                        le copie fotografiche dei bonifici che, oltre ad essere di non chiarissima interpretazione,
+                        non permettono l'estrazione automatica dei dati);
+                    </div>
+                    <div class="item">
+                        per gli altri parlamentari sono presenti gli importi del <em>totale restituito</em>, ma è assente
+                        la ripartizione dello stesso tra stipendio e rimborsi, come pure lo stipendio ed i rimborsi percepiti;
+                        inoltre il dato del totale restituito, nei 2 mesi di Marzo e Aprile 2013, risulta aggregato.
+                    </div>
+                </div>
                 
-                Fanno eccezione soltanto i primi tre mesi della legislatura (marzo, aprile, maggio del 2013) per i quali, limitatamente ad
-                alcuni parlamentari, sul predetto sito non sono presenti i dati in formato testuale (sono presenti soltanto le copie fotografiche
-                delle ricevute dei bonifici, peraltro di non chiarissima interpretazione, da cui non è possibile estrarre le informazioni in automatico).
-                Limitatamente ai soli predetti tre mesi ed ai soli parlamentari che in tale periodo non hanno pubblicato i dati in formato testuale,
-                sono stati utilizzati i seguenti valori presuntivi:
-                
+                I predetti due casi sono stati gestiti come segue: nel primo caso, non essendo disponibile alcun dato, si sono
+                adottati i seguenti importi presuntivi:
                 <div class="ui bulleted list">
                     <div class="item">stipendio mensile percepito: 5.000 Euro;</div>
                     <div class="item">restituzione mensile stipendio: 2.000 Euro;</div>
                     <div class="item">rimborsi mensili percepiti: 7.000 Euro;</div>
                     <div class="item">restituzione mensile rimborsi: 3.000 Euro;</div>
                 </div>
-                
-                derivanti da una stima dei valori medi, (largamente) <em>favorevole</em> al parlamentare
+                derivanti da una stima dei valori medi, <em>favorevole</em> al parlamentare
                 (ovvero stipendi e rimborsi sottostimati, restituzioni sovrastimate).
-                Per quanto riguarda il bimestre Marzo/Aprile 2013 (il primo della legislatura), il sito
-                <a href="https://www.beppegrillo.it/tirendiconto.it/trasparenza/" target="_blank">Ti rendi conto?!?!?!?</a>
-                riporta soltanto il rendiconto accorpato per entrambi i mesi: CoRe M5S invece ha diviso l'importo per 2,
-                attribuendone una metà al mese di Marzo 2013 e l'altra metà al mese di Aprile 2013.
-                Tutto quanto detto va considerato al netto di bug, che nel software sono sempre possibili. Tuttavia non appena segnalati,
-                gli eventuali bug verranno prontamente corretti.
-                D'altro canto, essendo il codice sorgente di CoRe M5S aperto, chiunque può controllarne la correttezza.
+                
+                Al mese di Marzo 2013 (il primo della legislatura),
+                sono stati attribuiti valori pari alla metà di quelli sopra elencati,
+                in quanto tale mese aveva soltanto 15 giorni lavorativi.
+                
+                Nel secondo caso, i predetti importi presuntivi sono stati utilizzati soltanto per i dati mancanti (ovvero stipendio
+                e rimborsi percepiti), mentre il dato aggregato delle restituzioni di Marzo e Aprile 2013 è stato ripartito
+                assegnandone un terzo al mese di Marzo e due terzi al mese di Aprile. Sempre nel secondo caso, la ripartizione
+                del totale restituito tra stipendio e rimborsi è stata effettuata secondo la proporzione 5/7 (pari al rapporto
+                tra stipendio mensile presuntivo e rimborsi mensili presuntivi).
             </div>
         </div>
 
@@ -399,7 +470,8 @@
             <h3>Perché non sono presenti tutti i parlamentari del M5S?</h3>
             <h4 class="ui horizontal inverted divider"><i class="icon diamond"></i></h4>
             <div>
-                L'aggiunta dei parlamentari richiede un certo lavoro: per ora ne sono stati inseriti 43, tra i più noti.
+                L'aggiunta dei parlamentari richiede un certo lavoro: per ora ne sono stati inseriti 50, dando la precedenza
+                ai volti più noti.
                 In futuro verranno aggiunti tutti gli altri. Chi volesse aiutare in quest'attività, è pregato di farlo attraverso
                 una <em>pull request</em> su GitHub.
             </div>
@@ -409,13 +481,17 @@
             <h3>Come funziona la selezione delle date?</h3>
             <h4 class="ui horizontal inverted divider"><i class="icon diamond"></i></h4>
             <div>
-                Nel caso in cui si selezioni l'opzione «Da inizio legislatura ad oggi», CoRe M5S scandisce
-                tutti i mesi della legislatura, fermandosi all'ultimo mese per il quale le rendicontazioni
-                del parlamentare selezionato sono disponibili.
-                Nel caso invece si selezioni l'opzione «Periodo specifico», nella schermata dei risultati verranno
-                mostrati tutti i mesi richiesti, con la possibilità però che in uno o più di essi gli importi
-                percepiti (e di conseguenza anche quelli restituiti) risultino pari a zero, cosa che indica che
-                i dati di quei mesi non sono ancora disponibili per il parlamentare selezionato.
+                Premessa: i periodi rendicontati dai singoli parlamentari del M5S sono diversi: c'è chi presenta subito le proprie
+                rendicontazioni e chi, invece, è in ritardo di diversi mesi.
+                CoRe M5S scandisce tutti i mesi impostati dall'utente, fermandosi all'ultimo mese per il quale le rendicontazioni
+                del parlamentare selezionato sono disponibili. L'ultimo mese con i dati trovato, che viene indicato
+                nell'intestazione della pagina dei risultati, può pertanto essere precedente al mese finale impostato dall'utente.
+                Nel caso in cui venga selezionato un intervallo di uno o più mesi in nessuno dei quali ci siano dati disponibili,
+                nella pagina dei risultati non vengono presentati i dati, ma un messaggio che ne notifica l'assenza
+                nel periodo e per il parlamentare selezionato.
+                Questa modalità di presentazione dei dati è cambiata rispetto alle versioni precedenti di CoRe M5S
+                (per l'esattezza dalla versione 5.0.0.* in poi), perché si ritiene che
+                queste ultime modifiche rendano più chiara la lettura dei dati.
             </div>
         </div>
 
@@ -432,7 +508,7 @@
                 preferibilmente su un computer e non su un dispositivo mobile; se aprite l'applicazione da facebook su
                 un dispositivo mobile, trasferitela nel browser esterno, perché nel browser integrato di facebook
                 la generazione dell'immagine sembra non funzionare (tutto il resto funziona correttamente);
-                in estremo subordine, fate uno screenshot.
+                in estremo subordine, fate uno screenshot con un tool esterno.
             </div>
         </div>
 
@@ -492,6 +568,15 @@
             </div>
         </div>
 
+        <div class="ui inverted segment">
+            <h3>È disponibile un <em>changelog</em> dell'applicazione?</h3>
+            <h4 class="ui horizontal inverted divider"><i class="icon diamond"></i></h4>
+            <div>
+                Il changelog dell'applicazione è dato dai messaggi di commit, disponibili
+                <a href="https://github.com/emazep/CoRe-M5S.js/commits/master">qui</a>.
+            </div>
+        </div>
+
     </div>
 
     <div class="actions" style="padding-bottom: 100px">
@@ -517,53 +602,59 @@
         <h4 style="color: Yellow" id="mesi_presuntivi"></h4>
     </div>
 
-    <div class="ui small inverted teal three statistics" style="margin-top: 1em; margin-bottom: 1em">
-        <div class="ui statistic">
-            <div class="value" id="stipendio_rimborso_tot"></div>
-            <div class="label">Tot. percepito</div>
+    <div id="statistics">
+        <div class="ui small inverted teal three statistics" style="margin-top: 1em; margin-bottom: 1em">
+            <div class="ui statistic">
+                <div class="value" id="stipendio_rimborso_tot"></div>
+                <div class="label">Tot. percepito</div>
+            </div>
+            <div class="ui statistic">
+                <div class="value" id="totale_restituito_tot"></div>
+                <div class="label">Tot. restituito</div>
+            </div>
+            <div class="ui statistic">
+                <div class="value" id="perc_totale_restituito_tot"></div>
+                <div class="label">Perc. restituito</div>
+            </div>
         </div>
-        <div class="ui statistic">
-            <div class="value" id="totale_restituito_tot"></div>
-            <div class="label">Tot. restituito</div>
+        <div class="ui small inverted violet three statistics" style="margin-top: 1em; margin-bottom: 1em">
+            <div class="ui statistic">
+                <div class="value" id="stipendio_tot"></div>
+                <div class="label">Stipendio net. percepito</div>
+            </div>
+            <div class="ui statistic">
+                <div class="value" id="stipendio_restituito_tot"></div>
+                <div class="label">Stipendio restituito</div>
+            </div>
+            <div class="ui statistic">
+                <div class="value" id="perc_stipendio_restituito_tot"></div>
+                <div class="label">Perc. restituito</div>
+            </div>
         </div>
-        <div class="ui statistic">
-            <div class="value" id="perc_totale_restituito_tot"></div>
-            <div class="label">Perc. restituito</div>
+        <div class="ui small inverted orange three statistics" style="margin-top: 1em; margin-bottom: 1em">
+            <div class="ui statistic">
+                <div class="value" id="rimborso_tot"></div>
+                <div class="label">Rimborsi percepiti</div>
+            </div>
+            <div class="ui statistic">
+                <div class="value" id="rimborso_restituito_tot"></div>
+                <div class="label">Rimborsi restituiti</div>
+            </div>
+            <div class="ui statistic">
+                <div class="value" id="perc_rimborso_restituito_tot"></div>
+                <div class="label">Perc. restituiti</div>
+            </div>
         </div>
     </div>
-    <div class="ui small inverted violet three statistics" style="margin-top: 1em; margin-bottom: 1em">
-        <div class="ui statistic">
-            <div class="value" id="stipendio_tot"></div>
-            <div class="label">Stipendio net. percepito</div>
-        </div>
-        <div class="ui statistic">
-            <div class="value" id="stipendio_restituito_tot"></div>
-            <div class="label">Stipendio restituito</div>
-        </div>
-        <div class="ui statistic">
-            <div class="value" id="perc_stipendio_restituito_tot"></div>
-            <div class="label">Perc. restituito</div>
-        </div>
+    <div id ="no_data_found_message">
+        <h1 style="color: Yellow">Nel periodo selezionato non sono presenti rendicontazioni del parlamentare.</h1>
     </div>
-    <div class="ui small inverted orange three statistics" style="margin-top: 1em; margin-bottom: 1em">
-        <div class="ui statistic">
-            <div class="value" id="rimborso_tot"></div>
-            <div class="label">Rimborsi percepiti</div>
-        </div>
-        <div class="ui statistic">
-            <div class="value" id="rimborso_restituito_tot"></div>
-            <div class="label">Rimborsi restituiti</div>
-        </div>
-        <div class="ui statistic">
-            <div class="value" id="perc_rimborso_restituito_tot"></div>
-            <div class="label">Perc. restituiti</div>
-        </div>
-    </div>
-
+    
     <div class="ui equal width grid">
         <div class="row bottom aligned">
             <div class="column left aligned">
-                © 2017 Emanuele Zeppieri - <span style="text-decoration: underline">emazep.github.io/CoRe-M5S.js</span>
+                <div>© 2017 Emanuele Zeppieri</div>
+                <div style="text-decoration: underline">emazep.github.io/CoRe-M5S.js</div>
             </div>
             <div class="actions column right aligned" id="results_actions">
                 <div class="ui blue save inverted button" id="results2image">
@@ -710,7 +801,7 @@
         var final_month_num_found;
         for ( var month = initial_month_num; month <= final_month_num; month++ ) {
             var month_data = tirendiconto_fulldata[user][month];
-            if ( month_data == null ) { continue }
+            if ( month_data == null ) { break }
             final_month_num_found = month;
             totale_restituito_tot    += month_data[0];
             stipendio_tot            += month_data[1];
@@ -780,30 +871,38 @@
         	$("#mesi_presuntivi").text(
         		'Gli importi relativi '                                       +
         		(presuntivi_month_nums_length == 1 ? 'al mese ' : 'ai mesi ') +
-        		presuntivi_months_text + 'sono presuntivi'
+        		presuntivi_months_text + 'sono presuntivi.'
         	).show()
         } else {
         	$("#mesi_presuntivi").hide()
         }
         
         var totale_percepito_tot = stipendio_tot + rimborso_tot;
-        $("#stipendio_rimborso_tot")    .text( format_currency( Math.round(totale_percepito_tot ) ) );
-        $("#totale_restituito_tot")     .text( format_currency( Math.round(totale_restituito_tot) ) );
-        $("#perc_totale_restituito_tot").text(
-        		totale_percepito_tot > 0 ? format_percent(totale_restituito_tot / totale_percepito_tot) :  '-'
-        );
-
-        $("#stipendio_tot")                .text( format_currency( Math.round(stipendio_tot ) )           );
-        $("#stipendio_restituito_tot")     .text( format_currency( Math.round(stipendio_restituito_tot) ) );
-        $("#perc_stipendio_restituito_tot").text(
-        		stipendio_tot > 0 ? format_percent(stipendio_restituito_tot / stipendio_tot) : '-'
-        );
-
-        $("#rimborso_tot")                .text( format_currency( Math.round(rimborso_tot ) )           );
-        $("#rimborso_restituito_tot")     .text( format_currency( Math.round(rimborso_restituito_tot) ) );
-        $("#perc_rimborso_restituito_tot").text(
-        		rimborso_tot > 0 ? format_percent(rimborso_restituito_tot / rimborso_tot) : '-'
-        );
+        if ( totale_percepito_tot != 0 ) {
+            $("#stipendio_rimborso_tot")    .text( format_currency( Math.round(totale_percepito_tot ) ) );
+            $("#totale_restituito_tot")     .text( format_currency( Math.round(totale_restituito_tot) ) );
+            $("#perc_totale_restituito_tot").text(
+            		totale_percepito_tot > 0 ? format_percent(totale_restituito_tot / totale_percepito_tot) :  '-'
+            );
+    
+            $("#stipendio_tot")                .text( format_currency( Math.round(stipendio_tot ) )           );
+            $("#stipendio_restituito_tot")     .text( format_currency( Math.round(stipendio_restituito_tot) ) );
+            $("#perc_stipendio_restituito_tot").text(
+            		stipendio_tot > 0 ? format_percent(stipendio_restituito_tot / stipendio_tot) : '-'
+            );
+    
+            $("#rimborso_tot")                .text( format_currency( Math.round(rimborso_tot ) )           );
+            $("#rimborso_restituito_tot")     .text( format_currency( Math.round(rimborso_restituito_tot) ) );
+            $("#perc_rimborso_restituito_tot").text(
+            		rimborso_tot > 0 ? format_percent(rimborso_restituito_tot / rimborso_tot) : '-'
+            );
+            
+            $("#no_data_found_message").hide();
+            $("#statistics").show()
+        } else {
+            $("#statistics").hide();
+        	$("#no_data_found_message").show()
+        }
 
         $("#results").modal('show');
     }

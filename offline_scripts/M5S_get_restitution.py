@@ -83,21 +83,36 @@ for user in sorted( requested_users, key=int ):
         
         person_soup = BeautifulSoup(person_page_text, HTML_PARSER)
         
+        stipendio_forfait = STIPENDIO_FORFAIT
+        rimborso_forfait  = RIMBORSO_FORFAIT
+        totale_restituito_forfait = TOTALE_RESTITUITO_FORFAIT
+        stipendio_restituito_forfait = STIPENDIO_RESTITUITO_FORFAIT
+        rimborso_restituito_forfait = RIMBORSO_RESTITUITO_FORFAIT
+        
+        if month == 3:
+            stipendio_forfait /= 2
+            rimborso_forfait  /= 2
+            totale_restituito_forfait /= 2
+            stipendio_restituito_forfait /= 2
+            rimborso_restituito_forfait /= 2
+
         try:
             table_totale, table_stipendio, table_rimborso = person_soup.findAll('table')[1:4]
 
             if month in (3, 4, 5):
                 # Different data on the site, special case.
                 totale_restituito = td2float( table_stipendio.findAll('tr')[5].findAll('td')[1].text )
-                
-                if month in (3, 4):
-                    totale_restituito /= 2
+                                
+                if month == 3:
+                    totale_restituito /= 3
+                elif month == 4:
+                    totale_restituito *= 2/3
                 
                 user_results[user][month] = {
                     'totale_restituito'   : totale_restituito,
-                    'stipendio'           : STIPENDIO_FORFAIT,
+                    'stipendio'           : stipendio_forfait,
                     'stipendio_restituito': totale_restituito * STIPENDIO_FORFAIT / TOTALE_PERCEPITO_FORFAIT,
-                    'rimborso'            : RIMBORSO_FORFAIT,
+                    'rimborso'            : rimborso_forfait,
                     'rimborso_restituito' : totale_restituito * RIMBORSO_FORFAIT / TOTALE_PERCEPITO_FORFAIT
                 }
             else :
@@ -139,11 +154,11 @@ for user in sorted( requested_users, key=int ):
             
             # Save anyway default values and go on
             user_results[user][month] = {
-                'totale_restituito'   : TOTALE_RESTITUITO_FORFAIT,
-                'stipendio'           : STIPENDIO_FORFAIT,
-                'stipendio_restituito': STIPENDIO_RESTITUITO_FORFAIT,
-                'rimborso'            : RIMBORSO_FORFAIT,
-                'rimborso_restituito' : RIMBORSO_RESTITUITO_FORFAIT,
+                'totale_restituito'   : totale_restituito_forfait,
+                'stipendio'           : stipendio_forfait,
+                'stipendio_restituito': stipendio_restituito_forfait,
+                'rimborso'            : rimborso_forfait,
+                'rimborso_restituito' : rimborso_restituito_forfait,
                 'presuntivo'          : True
             }
         
