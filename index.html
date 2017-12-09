@@ -307,7 +307,7 @@
             </div>
         </div>
     
-        <h3 class="ui dividing header">Calcola la somma totale restituita dal parlamentare nel periodo selezionato</h3>
+        <h3 class="ui dividing header">Calcola l'importo totale restituito dal parlamentare nel periodo selezionato</h3>
         <button class="ui submit teal button" type="submit">Esegui</button>
     
     </form>
@@ -318,7 +318,7 @@
                   © 2017 Emanuele Zeppieri
               </div>
               <div class="column right aligned">
-                  Ver. 3.0.1.2017-12-07
+                  Ver. 3.0.2.2017-12-07
               </div>
         </div>
     </div>
@@ -402,13 +402,16 @@
         </div>
 
         <div class="ui inverted segment">
-            <h3>Perché il mese finale mostrato nei risultati è diverso da quello selezionato?</h3>
+            <h3>Come funziona la selezione delle date?</h3>
             <h4 class="ui horizontal inverted divider"><i class="icon diamond"></i></h4>
             <div>
-                Perché non è detto che i mesi selezionati siano tutti disponibili
-                (sul sito <a href="https://www.beppegrillo.it/tirendiconto.it/trasparenza/" target="_blank">Ti rendi conto?!?!?!?</a>).
-                CoRe M5S permette di scegliere qualsiasi mese come fine del periodo,
-                ma poi necessariamente <em>deve fermarsi</em> all'ultimo mese per cui sono disponibili i dati per il parlamentare selezionato.
+                Nel caso in cui si selezioni l'opzione «Da inizio legislatura ad oggi», CoRe M5S scandisce
+                tutti i mesi della legislatura, fermandosi all'ultimo mese per il quale le rendicontazioni
+                del parlamentare selezionato sono disponibili.
+                Nel caso invece si selezioni l'opzione «Periodo specifico», nella schermata dei risultati verranno
+                mostrati tutti i mesi richiesti, con la possibilità però che in uno o più di essi gli importi
+                percepiti (e di conseguenza anche quelli restituiti) risultino pari a zero, cosa che indica che
+                i dati di quei mesi non sono ancora disponibili per il parlamentare selezionato.
             </div>
         </div>
 
@@ -585,7 +588,7 @@
     var calendar_settings = {
         type: "month",
         minDate: new Date(2013, 2),
-        maxDate: new Date(2018, 5),
+        maxDate: new Date(2018, 2),
         text: {
             days: ['D', 'L', 'M', 'M', 'G', 'V', 'S'],
             months: month_names,
@@ -780,20 +783,20 @@
         }
         
         var totale_percepito_tot = stipendio_tot + rimborso_tot;
-        $("#stipendio_rimborso_tot")    .text( format_currency( Math.round(totale_percepito_tot ) )            );
-        $("#totale_restituito_tot")     .text( format_currency( Math.round(totale_restituito_tot) )            );
+        $("#stipendio_rimborso_tot")    .text( format_currency( Math.round(totale_percepito_tot ) ) );
+        $("#totale_restituito_tot")     .text( format_currency( Math.round(totale_restituito_tot) ) );
         $("#perc_totale_restituito_tot").text(
         		totale_percepito_tot > 0 ? format_percent(totale_restituito_tot / totale_percepito_tot) :  '-'
         );
 
-        $("#stipendio_tot")                .text( format_currency( Math.round(stipendio_tot ) )               );
-        $("#stipendio_restituito_tot")     .text( format_currency( Math.round(stipendio_restituito_tot) )     );
+        $("#stipendio_tot")                .text( format_currency( Math.round(stipendio_tot ) )           );
+        $("#stipendio_restituito_tot")     .text( format_currency( Math.round(stipendio_restituito_tot) ) );
         $("#perc_stipendio_restituito_tot").text(
         		stipendio_tot > 0 ? format_percent(stipendio_restituito_tot / stipendio_tot) : '-'
         );
 
-        $("#rimborso_tot")                .text( format_currency( Math.round(rimborso_tot ) )              );
-        $("#rimborso_restituito_tot")     .text( format_currency( Math.round(rimborso_restituito_tot) )    );
+        $("#rimborso_tot")                .text( format_currency( Math.round(rimborso_tot ) )           );
+        $("#rimborso_restituito_tot")     .text( format_currency( Math.round(rimborso_restituito_tot) ) );
         $("#perc_rimborso_restituito_tot").text(
         		rimborso_tot > 0 ? format_percent(rimborso_restituito_tot / rimborso_tot) : '-'
         );
