@@ -415,7 +415,7 @@
                   © 2017 Emanuele Zeppieri
               </div>
               <div class="column right aligned">
-                  Ver. 8.0.0.2017-12-09
+                  Ver. 8.1.0.2017-12-09
               </div>
         </div>
     </div>
@@ -967,9 +967,9 @@
         	$("#mesi_presuntivi").hide()
         }
         
-        var totale_percepito = stipendio + rimborso;
-        if ( totale_percepito != 0 ) {
-            $("#stipendio_rimborso")    .text( format_currency( Math.round(totale_percepito ) ) );
+        if ( stipendio != 0 && ! isNaN(stipendio) ) {
+        	var totale_percepito = stipendio + rimborso;
+        	$("#stipendio_rimborso")    .text( format_currency( Math.round(totale_percepito ) ) );
             $("#totale_restituito")     .text( format_currency( Math.round(totale_restituito) ) );
             $("#perc_totale_restituito").text(
             	totale_percepito > 0 ? format_percent(totale_restituito / totale_percepito) :  '-'
