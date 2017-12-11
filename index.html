@@ -148,17 +148,49 @@
                         <img class="ui avatar image" src="images/faces/bottici.jpg">
                         BOTTICI Laura
                     </div>
+                    <div class="item" data-value="15">
+                        <img class="ui avatar image" src="images/faces/brescia.jpg">
+                        BRESCIA Giuseppe
+                    </div>
+                    <div class="item" data-value="16">
+                        <img class="ui avatar image" src="images/faces/brugnerotto.jpg">
+                        BRUGNEROTTO Marco
+                    </div>
                     <div class="item" data-value="116">
                         <img class="ui avatar image" src="images/faces/buccarella.jpg">
                         BUCCARELLA Maurizio
+                    </div>
+                    <div class="item" data-value="117">
+                        <img class="ui avatar image" src="images/faces/bulgarelli.jpg">
+                        BULGARELLI Elisa
                     </div>
                     <div class="item" data-value="17">
                         <img class="ui avatar image" src="images/faces/businarolo.jpg">
                         BUSINAROLO Francesca
                     </div>
+                    <div class="item" data-value="18">
+                        <img class="ui avatar image" src="images/faces/busto.jpg">
+                        BUSTO Mirko
+                    </div>
                     <div class="item" data-value="19">
                         <img class="ui avatar image" src="images/faces/cancelleri.jpg">
                         CANCELLERI Azzurra Pia Maria
+                    </div>
+                    <div class="item" data-value="119">
+                        <img class="ui avatar image" src="images/faces/cappelletti.jpg">
+                        CAPPELLETTI Enrico
+                    </div>
+                    <div class="item" data-value="20">
+                        <img class="ui avatar image" src="images/faces/cariello.jpg">
+                        CARIELLO Francesco
+                    </div>
+                    <div class="item" data-value="21">
+                        <img class="ui avatar image" src="images/faces/carinelli.jpg">
+                        CARINELLI Paola
+                    </div>
+                    <div class="item" data-value="22">
+                        <img class="ui avatar image" src="images/faces/caso.jpg">
+                        CASO Vincenzo
                     </div>
                     <div class="item" data-value="121">
                         <img class="ui avatar image" src="images/faces/castaldi.jpg">
@@ -167,6 +199,22 @@
                     <div class="item" data-value="23">
                         <img class="ui avatar image" src="images/faces/castelli.jpg">
                         CASTELLI Laura
+                    </div>
+                    <div class="item" data-value="122">
+                        <img class="ui avatar image" src="images/faces/catalfo.jpg">
+                        CATALFO Nunzia
+                    </div>
+                    <div class="item" data-value="25">
+                        <img class="ui avatar image" src="images/faces/cecconi.jpg">
+                        CECCONI Andrea
+                    </div>
+                    <div class="item" data-value="26">
+                        <img class="ui avatar image" src="images/faces/chimienti.jpg">
+                        CHIMIENTI Silvia
+                    </div>
+                    <div class="item" data-value="123">
+                        <img class="ui avatar image" src="images/faces/ciampolillo.jpg">
+                        CIAMPOLILLO Lello
                     </div>
                     <div class="item" data-value="124">
                         <img class="ui avatar image" src="images/faces/cioffi.jpg">
@@ -338,8 +386,25 @@
                 </div>
             </div>
         </div>
-    
-        <h3 class="ui dividing header">Calcola l'importo totale restituito dal parlamentare nel periodo selezionato</h3>
+
+        <h3 class="ui dividing header">Scegli il valore da calcolare</h3>
+        
+        <div class="inline fields">
+            <div class="field">
+                <div class="ui radio checkbox">
+                    <input name="value_type" checked="checked" type="radio" value="total">
+                    <label>Importo totale</label>
+                </div>
+            </div>
+            <div class="field">
+                <div class="ui radio checkbox">
+                    <input name="value_type" type="radio" value="mean">
+                    <label>Importo medio mensile</label>
+                </div>
+            </div>
+        </div>
+
+        <h3 class="ui dividing header">Calcola l'importo richiesto nel periodo selezionato</h3>
         <button class="ui submit teal button" type="submit">Esegui</button>
     
     </form>
@@ -350,7 +415,7 @@
                   © 2017 Emanuele Zeppieri
               </div>
               <div class="column right aligned">
-                  Ver. 5.0.2.2017-12-09
+                  Ver. 8.0.0.2017-12-09
               </div>
         </div>
     </div>
@@ -399,10 +464,12 @@
             <div>
                 Attraverso il sito <a href="https://www.beppegrillo.it/tirendiconto.it/trasparenza/" target="_blank">Ti rendi conto?!?!?!?</a>
                 è possibile controllare le somme restituite dai parlamentari del Movimento 5 Stelle. Tuttavia tale verifica può essere effettuata
-                soltanto su un singolo mese alla volta, rendendo così disagevole il calcolo dell'importo totale restituito da un parlamentare
-                in un arco di tempo più ampio. L'applicazione <em>CoRe M5S</em> colma questa lacuna, permettendo di controllare facilmente
-                l'importo totale restituito da ogni parlamentare in un intervallo di tempo arbitrario. Inoltre CoRe M5S offre una sintesi
-                dei dati che dovrebbe risultare più chiara e leggibile.
+                soltanto su un singolo mese alla volta, rendendo così disagevole il calcolo degli importi
+                su un arco di tempo più esteso. L'applicazione <em>CoRe M5S</em> colma questa lacuna, permettendo di controllare facilmente,
+                per ogni parlamentare,
+                sia l'importo totale che l'importo medio mensile restituito in un intervallo di tempo arbitrario.
+                CoRe M5S produce inoltre una sintesi dei dati più chiara e leggibile, ed offre un'interfaccia in grado di adattarsi
+                automaticamente sia ai PC che ai dispositivi mobili.
             </div>
         </div>
 
@@ -469,7 +536,7 @@
             <h3>Perché non sono presenti tutti i parlamentari del M5S?</h3>
             <h4 class="ui horizontal inverted divider"><i class="icon diamond"></i></h4>
             <div>
-                L'aggiunta dei parlamentari richiede un certo lavoro: per ora ne sono stati inseriti 50, dando la precedenza
+                L'aggiunta dei parlamentari richiede un certo lavoro: per ora ne sono stati inseriti 62, dando la precedenza
                 ai volti più noti.
                 In futuro verranno aggiunti tutti gli altri. Chi volesse aiutare in quest'attività, è pregato di farlo attraverso
                 una <em>pull request</em> su GitHub.
@@ -480,14 +547,13 @@
             <h3>Come funziona la selezione delle date?</h3>
             <h4 class="ui horizontal inverted divider"><i class="icon diamond"></i></h4>
             <div>
-                Premessa: i periodi rendicontati dai singoli parlamentari del M5S sono diversi: c'è chi presenta subito le proprie
-                rendicontazioni e chi, invece, è in ritardo di diversi mesi.
+                Premessa: i periodi rendicontati sono in generale differenti da parlamentare a parlamentare, a causa della
+                diversa puntualità dei parlamentari medesimi nel pubblicare le rendicontazioni.
                 CoRe M5S scandisce tutti i mesi impostati dall'utente, fermandosi all'ultimo mese per il quale le rendicontazioni
                 del parlamentare selezionato sono disponibili. L'ultimo mese con i dati trovato, che viene indicato
                 nell'intestazione della pagina dei risultati, può pertanto essere precedente al mese finale impostato dall'utente.
-                Nel caso in cui venga selezionato un intervallo di uno o più mesi in nessuno dei quali ci siano dati disponibili,
-                nella pagina dei risultati non vengono presentati i dati, ma un messaggio che ne notifica l'assenza
-                nel periodo e per il parlamentare selezionato.
+                Nel caso in cui venga selezionato un intervallo di uno o più mesi tutti privi di rendicontazioni,
+                nella pagina dei risultati non vengono presentati i dati, ma un messaggio che ne notifica l'assenza.
                 Questa modalità di presentazione dei dati è cambiata rispetto alle versioni precedenti di CoRe M5S
                 (per l'esattezza dalla versione 5.0.0.* in poi), perché si ritiene che
                 queste ultime modifiche rendano più chiara la lettura dei dati.
@@ -595,7 +661,8 @@
             <img class="ui bottom aligned tiny circular image" src="" id="user_pic_results">
             <span style="display: inline-block; margin-left:1em">
                 <i style="font-size: 2rem" id="user_name_results"></i>
-                <br>Periodo: <i id="initial_month_results"></i><i id="final_month_results"></i>
+                <br><span id="result_type"></span> del periodo:
+                <br><span id="initial_month_results"></span><span id="final_month_results"></span>
             </span>
         </p>
         <h4 style="color: Yellow" id="mesi_presuntivi"></h4>
@@ -604,43 +671,43 @@
     <div id="statistics">
         <div class="ui small inverted teal three statistics" style="margin-top: 1em; margin-bottom: 1em">
             <div class="ui statistic">
-                <div class="value" id="stipendio_rimborso_tot"></div>
+                <div class="value" id="stipendio_rimborso"></div>
                 <div class="label">Tot. percepito</div>
             </div>
             <div class="ui statistic">
-                <div class="value" id="totale_restituito_tot"></div>
+                <div class="value" id="totale_restituito"></div>
                 <div class="label">Tot. restituito</div>
             </div>
             <div class="ui statistic">
-                <div class="value" id="perc_totale_restituito_tot"></div>
+                <div class="value" id="perc_totale_restituito"></div>
                 <div class="label">Perc. restituito</div>
             </div>
         </div>
         <div class="ui small inverted violet three statistics" style="margin-top: 1em; margin-bottom: 1em">
             <div class="ui statistic">
-                <div class="value" id="stipendio_tot"></div>
+                <div class="value" id="stipendio"></div>
                 <div class="label">Stipendio net. percepito</div>
             </div>
             <div class="ui statistic">
-                <div class="value" id="stipendio_restituito_tot"></div>
+                <div class="value" id="stipendio_restituito"></div>
                 <div class="label">Stipendio restituito</div>
             </div>
             <div class="ui statistic">
-                <div class="value" id="perc_stipendio_restituito_tot"></div>
+                <div class="value" id="perc_stipendio_restituito"></div>
                 <div class="label">Perc. restituito</div>
             </div>
         </div>
         <div class="ui small inverted orange three statistics" style="margin-top: 1em; margin-bottom: 1em">
             <div class="ui statistic">
-                <div class="value" id="rimborso_tot"></div>
+                <div class="value" id="rimborso"></div>
                 <div class="label">Rimborsi percepiti</div>
             </div>
             <div class="ui statistic">
-                <div class="value" id="rimborso_restituito_tot"></div>
+                <div class="value" id="rimborso_restituito"></div>
                 <div class="label">Rimborsi restituiti</div>
             </div>
             <div class="ui statistic">
-                <div class="value" id="perc_rimborso_restituito_tot"></div>
+                <div class="value" id="perc_rimborso_restituito"></div>
                 <div class="label">Perc. restituiti</div>
             </div>
         </div>
@@ -728,6 +795,7 @@
             parlamentare_id  : $("#parlamentare").dropdown('get value'),
             parlamentare_name: $("#parlamentare").dropdown('get text').trim(),
             timeframe        : $("input[name='timeframe']:checked").val(),
+            value_type       : $("input[name='value_type']:checked").val(),
             initial_month    : $form.form("get value", "initial_month"),
             final_month      : $form.form("get value", "final_month")
         }
@@ -798,9 +866,11 @@
         ;
         var user = form_values.parlamentare_id;
         var final_month_num_found;
+        var month_count = 0;
         for ( var month = initial_month_num; month <= final_month_num; month++ ) {
             var month_data = tirendiconto_fulldata[user][month];
             if ( month_data == null ) { break }
+            month_count = month == 3 ? month_count + 0.5 : month_count + 1;
             final_month_num_found = month;
             totale_restituito_tot    += month_data[0];
             stipendio_tot            += month_data[1];
@@ -812,10 +882,27 @@
             }
         }
         
+        var
+            totale_restituito    = totale_restituito_tot   ,
+            stipendio            = stipendio_tot           ,
+            stipendio_restituito = stipendio_restituito_tot,
+            rimborso             = rimborso_tot            ,
+            rimborso_restituito  = rimborso_restituito_tot
+        ;
+        var value_type = form_values.value_type;
+        
+        if ( value_type == 'mean' ) {
+            totale_restituito    /= month_count;
+            stipendio            /= month_count;
+            stipendio_restituito /= month_count;
+            rimborso             /= month_count;
+            rimborso_restituito  /= month_count
+        }
+        
         display_user_results(
             form_values.parlamentare_name,
-            form_values.initial_month, final_month_num_found,
-            totale_restituito_tot, stipendio_tot, stipendio_restituito_tot, rimborso_tot, rimborso_restituito_tot,
+            form_values.initial_month, final_month_num_found, value_type,
+            totale_restituito, stipendio, stipendio_restituito, rimborso, rimborso_restituito,
             presuntivi_month_nums, form_values.final_month
         );
         
@@ -842,8 +929,8 @@
     }
 
     function display_user_results(
-        user_name, initial_month, final_month_num, totale_restituito_tot,
-        stipendio_tot, stipendio_restituito_tot, rimborso_tot, rimborso_restituito_tot,
+        user_name, initial_month, final_month_num, value_type,
+        totale_restituito, stipendio, stipendio_restituito, rimborso, rimborso_restituito,
         presuntivi_month_nums,
         final_month
     ) {
@@ -861,6 +948,10 @@
             $("#final_month_results").show()
         }
         
+        $("#result_type").text(
+        	value_type == 'mean' ? 'Medie mensili' : 'Totali'
+        );
+        
         var presuntivi_months_text = '';
         var presuntivi_month_nums_length = presuntivi_month_nums.length;
         for (i = 0; i < presuntivi_month_nums_length; i++) {
@@ -876,24 +967,24 @@
         	$("#mesi_presuntivi").hide()
         }
         
-        var totale_percepito_tot = stipendio_tot + rimborso_tot;
-        if ( totale_percepito_tot != 0 ) {
-            $("#stipendio_rimborso_tot")    .text( format_currency( Math.round(totale_percepito_tot ) ) );
-            $("#totale_restituito_tot")     .text( format_currency( Math.round(totale_restituito_tot) ) );
-            $("#perc_totale_restituito_tot").text(
-            		totale_percepito_tot > 0 ? format_percent(totale_restituito_tot / totale_percepito_tot) :  '-'
+        var totale_percepito = stipendio + rimborso;
+        if ( totale_percepito != 0 ) {
+            $("#stipendio_rimborso")    .text( format_currency( Math.round(totale_percepito ) ) );
+            $("#totale_restituito")     .text( format_currency( Math.round(totale_restituito) ) );
+            $("#perc_totale_restituito").text(
+            	totale_percepito > 0 ? format_percent(totale_restituito / totale_percepito) :  '-'
             );
     
-            $("#stipendio_tot")                .text( format_currency( Math.round(stipendio_tot ) )           );
-            $("#stipendio_restituito_tot")     .text( format_currency( Math.round(stipendio_restituito_tot) ) );
-            $("#perc_stipendio_restituito_tot").text(
-            		stipendio_tot > 0 ? format_percent(stipendio_restituito_tot / stipendio_tot) : '-'
+            $("#stipendio")                .text( format_currency( Math.round(stipendio ) )           );
+            $("#stipendio_restituito")     .text( format_currency( Math.round(stipendio_restituito) ) );
+            $("#perc_stipendio_restituito").text(
+            	stipendio > 0 ? format_percent(stipendio_restituito / stipendio) : '-'
             );
     
-            $("#rimborso_tot")                .text( format_currency( Math.round(rimborso_tot ) )           );
-            $("#rimborso_restituito_tot")     .text( format_currency( Math.round(rimborso_restituito_tot) ) );
-            $("#perc_rimborso_restituito_tot").text(
-            		rimborso_tot > 0 ? format_percent(rimborso_restituito_tot / rimborso_tot) : '-'
+            $("#rimborso")                .text( format_currency( Math.round(rimborso ) )           );
+            $("#rimborso_restituito")     .text( format_currency( Math.round(rimborso_restituito) ) );
+            $("#perc_rimborso_restituito").text(
+            		rimborso > 0 ? format_percent(rimborso_restituito / rimborso) : '-'
             );
             
             $("#no_data_found_message").hide();
