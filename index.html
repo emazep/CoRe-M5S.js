@@ -1064,10 +1064,10 @@
 
     function results2image() {
         var filename =
-            $("#user_name_results")    .text().trim().replace(/ /g,"_") + '_' +
+            $("#user_name_results")    .text().replace(/ /g,"_") + '_' +
             $("#result_type")          .text().replace(/ mensili/, "")  + '_' +
-            $("#initial_month_results").text().trim().replace(/ /g,"-") + '_' +
-            $("#final_month_results")  .text().trim().replace(/ /g,"-") + '.png'
+            $("#initial_month_results").text().replace(/ /g,"-") + '_' +
+            $("#final_month_results")  .text().replace(/^[-\s]+/,'').replace(/ /g,"-") + '.png'
         ;
         
         var body_original_color = $('body').css('background-color');
