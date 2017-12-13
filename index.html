@@ -21,11 +21,7 @@
 </script>
 
 
-    <script
-        src="https://code.jquery.com/jquery-3.2.1.min.js"
-        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-        crossorigin="anonymous"
-    ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
     <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
     <script src="semantic/dist/semantic.min.js"></script>
@@ -36,7 +32,7 @@
     <script src="html2canvas.min.js"></script>
     <script src="FileSaver.min.js"></script>
     
-    <script src="2017-12-09_tirendiconto.min.js"></script>
+    <script src="2017-12-13_tirendiconto.min.js"></script>
         
     <title>CoRe M5S</title>
     
@@ -91,7 +87,7 @@
                 <div class="default text">Parlamentari del M5S</div>
                 
                 <div class="menu">
-    
+
                     <div class="item" data-value="1">
                         <img class="ui avatar image" src="images/faces/agostinelli.jpg">
                         AGOSTINELLI Donatella
@@ -220,13 +216,73 @@
                         <img class="ui avatar image" src="images/faces/cioffi.jpg">
                         CIOFFI Andrea
                     </div>
+                    <div class="item" data-value="27">
+                        <img class="ui avatar image" src="images/faces/ciprini.jpg">
+                        CIPRINI Tiziana
+                    </div>
+                    <div class="item" data-value="28">
+                        <img class="ui avatar image" src="images/faces/colletti.jpg">
+                        COLLETTI Andrea
+                    </div>
                     <div class="item" data-value="29">
                         <img class="ui avatar image" src="images/faces/colonnese.jpg">
                         COLONNESE Vega
                     </div>
+                    <div class="item" data-value="30">
+                        <img class="ui avatar image" src="images/faces/cominardi.jpg">
+                        COMINARDI Claudio
+                    </div>
+                    <div class="item" data-value="31">
+                        <img class="ui avatar image" src="images/faces/corda.jpg">
+                        CORDA Emanuela
+                    </div>
+                    <div class="item" data-value="125">
+                        <img class="ui avatar image" src="images/faces/cotti.jpg">
+                        COTTI Roberto
+                    </div>
+                    <div class="item" data-value="32">
+                        <img class="ui avatar image" src="images/faces/cozzolino.jpg">
+                        COZZOLINO Emanuele
+                    </div>
                     <div class="item" data-value="126">
                         <img class="ui avatar image" src="images/faces/crimi.jpg">
                         CRIMI Vito Claudio
+                    </div>
+                    <div class="item" data-value="33">
+                        <img class="ui avatar image" src="images/faces/crippa.jpg">
+                        CRIPPA Davide
+                    </div>
+                    <div class="item" data-value="35">
+                        <img class="ui avatar image" src="images/faces/davilla.jpg">
+                        DA VILLA Marco
+                    </div>
+                    <div class="item" data-value="36">
+                        <img class="ui avatar image" src="images/faces/dadone.jpg">
+                        DADONE Fabiana
+                    </div>
+                    <div class="item" data-value="37">
+                        <img class="ui avatar image" src="images/faces/daga.jpg">
+                        DAGA Federica
+                    </div>
+                    <div class="item" data-value="38">
+                        <img class="ui avatar image" src="images/faces/dallosso.jpg">
+                        DALL'OSSO Matteo
+                    </div>
+                    <div class="item" data-value="39">
+                        <img class="ui avatar image" src="images/faces/dambrosio.jpg">
+                        D'AMBROSIO Giuseppe
+                    </div>
+                    <div class="item" data-value="40">
+                        <img class="ui avatar image" src="images/faces/delorenzis.jpg">
+                        DE LORENZIS Diego
+                    </div>
+                    <div class="item" data-value="41">
+                        <img class="ui avatar image" src="images/faces/derosa.jpg">
+                        DE ROSA Massimo Felice
+                    </div>
+                    <div class="item" data-value="42">
+                        <img class="ui avatar image" src="images/faces/delgrosso.jpg">
+                        DEL GROSSO Daniele
                     </div>
                     <div class="item" data-value="45">
                         <img class="ui avatar image" src="images/faces/dibattista.jpg">
@@ -239,6 +295,14 @@
                     <div class="item" data-value="48">
                         <img class="ui avatar image" src="images/faces/distefano.jpg">
                         DI STEFANO Manlio
+                    </div>
+                    <div class="item" data-value="51">
+                        <img class="ui avatar image" src="images/faces/dinca.jpg">
+                        D'INCÀ Federico
+                    </div>
+                    <div class="item" data-value="52">
+                        <img class="ui avatar image" src="images/faces/duva.jpg">
+                        D'UVA Francesco
                     </div>
                     <div class="item" data-value="129">
                         <img class="ui avatar image" src="images/faces/endrizzi.jpg">
@@ -366,8 +430,8 @@
             </div>
         </div>
     
-        <div class="seven wide two fields" id="dates_block">
-            <div class="three wide field">
+        <div class="eight wide two fields" id="dates_block">
+            <div class="four wide field">
                 <label>Dal mese:</label>
                 <div class="ui calendar" id="initial_month">
                     <div class="ui input left icon">
@@ -376,7 +440,7 @@
                     </div>
                 </div>
             </div>
-            <div class="three wide field">
+            <div class="four wide field">
                 <label>Al mese:</label>
                 <div class="ui calendar" id="final_month">
                     <div class="ui input left icon">
@@ -415,7 +479,7 @@
                   © 2017 Emanuele Zeppieri
               </div>
               <div class="column right aligned">
-                  Ver. 8.1.0.2017-12-09
+                  Ver. 9.0.0.2017-12-13
               </div>
         </div>
     </div>
@@ -536,10 +600,11 @@
             <h3>Perché non sono presenti tutti i parlamentari del M5S?</h3>
             <h4 class="ui horizontal inverted divider"><i class="icon diamond"></i></h4>
             <div>
-                L'aggiunta dei parlamentari richiede un certo lavoro: per ora ne sono stati inseriti 62, dando la precedenza
+                L'aggiunta dei parlamentari richiede un certo lavoro: per ora ne sono stati inseriti 80, dando la precedenza
                 ai volti più noti.
                 In futuro verranno aggiunti tutti gli altri. Chi volesse aiutare in quest'attività, è pregato di farlo attraverso
-                una <em>pull request</em> su GitHub.
+                una <em>pull request</em> su
+                <a href="https://github.com/emazep/CoRe-M5S.js" target="_blank">GitHub</a>.
             </div>
         </div>
 
@@ -553,10 +618,10 @@
                 del parlamentare selezionato sono disponibili. L'ultimo mese con i dati trovato, che viene indicato
                 nell'intestazione della pagina dei risultati, può pertanto essere precedente al mese finale impostato dall'utente.
                 Nel caso in cui venga selezionato un intervallo di uno o più mesi tutti privi di rendicontazioni,
-                nella pagina dei risultati non vengono presentati i dati, ma un messaggio che ne notifica l'assenza.
-                Questa modalità di presentazione dei dati è cambiata rispetto alle versioni precedenti di CoRe M5S
+                nella pagina dei risultati non verranno presentati i dati, ma un messaggio che ne notifica l'assenza.
+                Questa modalità di esposizione dei dati è difforme da quella delle versioni precedenti di CoRe M5S
                 (per l'esattezza dalla versione 5.0.0.* in poi), perché si ritiene che
-                queste ultime modifiche rendano più chiara la lettura dei dati.
+                queste ultime modifiche rendano più chiari i risultati della ricerca.
             </div>
         </div>
 
@@ -564,13 +629,13 @@
             <h3>L'esportazione dei risultati come immagine non funziona bene!</h3>
             <h4 class="ui horizontal inverted divider"><i class="icon diamond"></i></h4>
             <div>
-                Risposta breve: lo so. Risposta lunga: non è semplice da fare interamente client-side
+                Risposta breve: lo so. Risposta lunga: non è semplice da fare interamente lato client
                 (in particolar modo su dispositivi touch)
                 come fa quest'applicazione, considerando che si è inteso generare i risultati
-                in formato testuale, perché ciò permette di il copia e incolla degli stessi. (L'aiuto su questa funzionalità
-                dell'applicazione, purché fattivo, sarà grandemente apprezzato).
+                in formato testuale, per rendere possibile il copia e incolla degli stessi (un aiuto su questa funzionalità
+                dell'applicazione, purché fattivo, sarà grandemente apprezzato e pubblicizzato).
                 Workaround, in ordine di preferenza: utilizzate un browser recente (preferibilmente Firefox o Chrome),
-                preferibilmente su un computer e non su un dispositivo mobile; se aprite l'applicazione da facebook su
+                preferibilmente su un PC e non su un dispositivo mobile; se aprite l'applicazione da facebook su
                 un dispositivo mobile, trasferitela nel browser esterno, perché nel browser integrato di facebook
                 la generazione dell'immagine sembra non funzionare (tutto il resto funziona correttamente);
                 in estremo subordine, fate uno screenshot con un tool esterno.
@@ -891,7 +956,7 @@
         ;
         var value_type = form_values.value_type;
         
-        if ( value_type == 'mean' ) {
+        if ( value_type == 'mean' && month_count > 0 ) {
             totale_restituito    /= month_count;
             stipendio            /= month_count;
             stipendio_restituito /= month_count;
@@ -999,9 +1064,10 @@
 
     function results2image() {
         var filename =
-            $("#user_name_results")    .text().replace(/ /g,"_") + '_' +
-            $("#initial_month_results").text().replace(/ /g,"-") + '_' +
-            $("#final_month_results")  .text().replace(/ /g,"-") + '.png'
+            $("#user_name_results")    .text().trim().replace(/ /g,"_") + '_' +
+            $("#result_type")          .text().replace(/ mensili/, "")  + '_' +
+            $("#initial_month_results").text().trim().replace(/ /g,"-") + '_' +
+            $("#final_month_results")  .text().trim().replace(/ /g,"-") + '.png'
         ;
         
         var body_original_color = $('body').css('background-color');
