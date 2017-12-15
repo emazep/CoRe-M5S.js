@@ -479,7 +479,7 @@
                   © 2017 Emanuele Zeppieri
               </div>
               <div class="column right aligned">
-                  Ver. 10.0.1.2017-12-13
+                  Ver. 10.0.2.2017-12-13
               </div>
         </div>
     </div>
@@ -639,6 +639,20 @@
                 un dispositivo mobile, trasferitela nel browser esterno, perché nel browser integrato di facebook
                 la generazione dell'immagine sembra non funzionare (tutto il resto funziona correttamente);
                 in estremo subordine, fate uno screenshot con un tool esterno.
+            </div>
+        </div>
+
+        <div class="ui inverted segment">
+            <h3>Perché CoRe M5S non espone API HTTP?</h3>
+            <h4 class="ui horizontal inverted divider"><i class="icon diamond"></i></h4>
+            <div>
+                Perché si tratta di un'applicazione serverless, che gira per intero nel browser del client.
+                Per chi fosse interessato ad estendere il progetto in termini di riusabilità, si consiglia piuttosto
+                la creazione di una libreria javascript disaccoppiata dalla UI.
+                La scelta dell'architettura serverless è resa possibile dal fatto che l'applicazione lavora su un db statico
+                di ridotte dimensioni (che può essere pertanto agevolmente contenuto nella RAM del client, anche nel caso di dispositivi mobili),
+                e comporta il vantaggio che l'applicazione medesima possa essere distribuita anche attraverso
+                servizi di hosting di sole pagine statiche (come GitHub Pages).
             </div>
         </div>
 
