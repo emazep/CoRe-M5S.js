@@ -32,7 +32,7 @@
     <script src="html2canvas.min.js"></script>
     <script src="FileSaver.min.js"></script>
     
-    <script src="2017-12-13_tirendiconto.min.js"></script>
+    <script src="2017-12-18_tirendiconto.min.js"></script>
         
     <title>CoRe M5S</title>
     
@@ -67,7 +67,7 @@
 
 <body>
 
-<a href="https://github.com/emazep/CoRe-M5S.js" id="github_ribbon"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/e7bbb0521b397edbd5fe43e7f760759336b5e05f/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677265656e5f3030373230302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png"></a>
+<a href="https://github.com/emazep/CoRe-M5S.js" id="github_ribbon" target="_blank"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/e7bbb0521b397edbd5fe43e7f760759336b5e05f/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677265656e5f3030373230302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png"></a>
 
 <div class="ui container" id="main_content">
     
@@ -328,6 +328,10 @@
                         <img class="ui avatar image" src="images/faces/frusone.jpg">
                         FRUSONE Luca
                     </div>
+                    <div class="item" data-value="59">
+                        <img class="ui avatar image" src="images/faces/gallinella.jpg">
+                        GALLINELLA Filippo
+                    </div>
                     <div class="item" data-value="133">
                         <img class="ui avatar image" src="images/faces/giarrusso.jpg">
                         GIARRUSSO Mario Michele
@@ -340,6 +344,10 @@
                         <img class="ui avatar image" src="images/faces/grillo.jpg">
                         GRILLO Giulia
                     </div>
+                    <div class="item" data-value="65">
+                        <img class="ui avatar image" src="images/faces/labbate.jpg">
+                        L'ABBATE Giuseppe
+                    </div>
                     <div class="item" data-value="135">
                         <img class="ui avatar image" src="images/faces/lezzi.jpg">
                         LEZZI Barbara
@@ -351,6 +359,10 @@
                     <div class="item" data-value="67">
                         <img class="ui avatar image" src="images/faces/lombardi.jpg">
                         LOMBARDI Roberta
+                    </div>
+                    <div class="item" data-value="136">
+                        <img class="ui avatar image" src="images/faces/lucidi.jpg">
+                        LUCIDI Stefano
                     </div>
                     <div class="item" data-value="138">
                         <img class="ui avatar image" src="images/faces/martelli.jpg">
@@ -388,6 +400,10 @@
                         <img class="ui avatar image" src="images/faces/sorial.jpg">
                         SORIAL Girgis Giorgio
                     </div>
+                    <div class="item" data-value="93">
+                        <img class="ui avatar image" src="images/faces/spadoni.jpg">
+                        SPADONI Maria Edera
+                    </div>
                     <div class="item" data-value="156">
                         <img class="ui avatar image" src="images/faces/taverna.jpg">
                         TAVERNA Paola
@@ -407,6 +423,10 @@
                     <div class="item" data-value="105">
                         <img class="ui avatar image" src="images/faces/villarosa.jpg">
                         VILLAROSA Alessio Mattia
+                    </div>
+                    <div class="item" data-value="106">
+                        <img class="ui avatar image" src="images/faces/zolezzi.jpg">
+                        ZOLEZZI Alberto
                     </div>
 
                </div>
@@ -479,7 +499,7 @@
                   © 2017 Emanuele Zeppieri
               </div>
               <div class="column right aligned">
-                  Ver. 10.0.2.2017-12-13
+                  Ver. 10.1.0.2017-12-18
               </div>
         </div>
     </div>
@@ -600,7 +620,7 @@
             <h3>Perché non sono presenti tutti i parlamentari del M5S?</h3>
             <h4 class="ui horizontal inverted divider"><i class="icon diamond"></i></h4>
             <div>
-                L'aggiunta dei parlamentari richiede un certo lavoro: per ora ne sono stati inseriti 80, dando la precedenza
+                L'aggiunta dei parlamentari richiede un certo lavoro: per ora ne sono stati inseriti 85, dando la precedenza
                 ai volti più noti.
                 In futuro verranno aggiunti tutti gli altri. Chi volesse aiutare in quest'attività, è pregato di farlo attraverso
                 una <em>pull request</em> su
@@ -618,10 +638,10 @@
                 del parlamentare selezionato sono disponibili. L'ultimo mese con i dati trovato, che viene indicato
                 nell'intestazione della pagina dei risultati, può pertanto essere precedente al mese finale impostato dall'utente.
                 Nel caso in cui venga selezionato un intervallo di uno o più mesi tutti privi di rendicontazioni,
-                nella pagina dei risultati non verranno presentati i dati, ma un messaggio che ne notifica l'assenza.
-                Questa modalità di esposizione dei dati è difforme da quella delle versioni precedenti di CoRe M5S
+                nella pagina dei risultati varrà mostrato un messaggio che avverte dell'assenza di dati in quel periodo.
+                Questa modalità di esposizione dei periodi senza dati è difforme da quella delle versioni precedenti di CoRe M5S
                 (per l'esattezza dalla versione 5.0.0.* in poi), perché si ritiene che
-                queste ultime modifiche rendano più chiari i risultati della ricerca.
+                queste ultime modifiche renda più chiara la situazione.
             </div>
         </div>
 
@@ -716,8 +736,8 @@
             <h3>È disponibile un <em>changelog</em> dell'applicazione?</h3>
             <h4 class="ui horizontal inverted divider"><i class="icon diamond"></i></h4>
             <div>
-                Il changelog dell'applicazione è dato dai messaggi di commit, disponibili
-                <a href="https://github.com/emazep/CoRe-M5S.js/commits/master">qui</a>.
+                Il changelog dell'applicazione è dato dai messaggi di commit,
+                <a href="https://github.com/emazep/CoRe-M5S.js/commits/master" target="_blank">disponibili qui</a>.
             </div>
         </div>
 

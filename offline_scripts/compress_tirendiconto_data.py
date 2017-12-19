@@ -26,4 +26,5 @@ for user, user_data in tirendiconto_full_data_py.items():
             month_data['presuntivo']
         )
 
+print( "tirendiconto_fulldata =" )
 print( json.dumps(out_data) )
