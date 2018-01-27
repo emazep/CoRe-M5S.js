@@ -10,13 +10,14 @@ import json
 import sys
 
 HTML_PARSER = 'lxml'
+UA = UserAgent()
 
-PEOPLEDIR_URL = 'https://www.beppegrillo.it/tirendiconto.it/trasparenza/'
-PERSON_URL_TEMPL = 'https://www.beppegrillo.it/tirendiconto.it/trasparenza/rendicontazione.php?mese=${mese}&user=${user}&tipo=${tipo}'
+PEOPLEDIR_URL    = 'https://www.ilblogdellestelle.it/tirendiconto.it/trasparenza/'
+PERSON_URL_TEMPL = PEOPLEDIR_URL + 'rendicontazione.php?mese=${mese}&user=${user}&tipo=${tipo}'
 person_url_templ = Template(PERSON_URL_TEMPL)
+
 PAGE_NA_TEXT = 'Rendicontazione del mese selezionato in elaborazione'
 RECEIPT_TEXT = 'upload/bonifici'
-UA = UserAgent()
 
 STIPENDIO_FORFAIT            = 5000
 RIMBORSO_FORFAIT             = 7000

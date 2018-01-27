@@ -28,23 +28,23 @@
 
     <link rel="stylesheet" href="semantic/dist/calendar.min.css">
     <script src="semantic/dist/calendar.min.js"></script>
-    
+
     <script src="html2canvas.min.js"></script>
     <script src="FileSaver.min.js"></script>
-    
-    <script src="2018-01-22_tirendiconto.min.js"></script>
+
+    <script src="2018-01-26_tirendiconto.min.js"></script>
         
     <title>CoRe M5S</title>
-    
+
     <meta name="description" content="Controllo Restituzione M5S">
     <meta name="keywords" content="M5S,Movimento,restituzione,stipendio,parlamentari">
     <meta name="author" content="Emanuele Zeppieri">
 
     <link rel="image_src" href="corem5s_logo_square.png">
     <meta property="og:image" content="https://emazep.github.io/CoRe-M5S.js/corem5s_logo_square.png">
-    
+
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/cookie-bar/cookiebar-latest.min.js"></script>
-    
+
     <style>
         body > .ui.container {
             padding-top: 1em;
@@ -67,18 +67,27 @@
 
 <body>
 
-<a href="https://github.com/emazep/CoRe-M5S.js" id="github_ribbon" target="_blank"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/e7bbb0521b397edbd5fe43e7f760759336b5e05f/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677265656e5f3030373230302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png"></a>
+<a href="https://github.com/emazep/CoRe-M5S.js" id="github_ribbon" target="_blank"><img style="position: absolute; top: 0; right: 0; border: 0; z-index: -1" src="https://camo.githubusercontent.com/e7bbb0521b397edbd5fe43e7f760759336b5e05f/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677265656e5f3030373230302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png"></a>
 
 <div class="ui container" id="main_content">
-    
+
     <h1 class="ui dividing header inset-text"><span class="banner3d" style="color: Gold">CoRe M5S</span> (<em>Controllo Restituzione M5S</em>)</h1>
 
-    <button class="ui compact labeled icon button" onclick="$('#info_page').modal('show')"><i class="info icon"></i>Informazioni</button>
-    
+        <div class="ui equal width grid">
+            <div class="row bottom aligned">
+                <div class="column left aligned">
+                    Dati prelevati da <a href="https://www.ilblogdellestelle.it/tirendiconto.it/trasparenza/" target="_blank">TiRendiconto</a> il 26/12/2018
+                </div>
+                <div class="column right aligned">
+                    <button class="ui compact labeled icon button" onclick="$('#info_page').modal('show')"><i class="info icon"></i>Informazioni</button>
+                </div>
+            </div>
+        </div>
+
     <form class="ui form segment" id="search_form">
-    
+
         <h3 class="ui dividing header">Scegli il parlamentare del M5S</h3>
-    
+
         <div class="field">
             <label>Parlamentare:</label>
             <div class="ui selection dropdown" id="parlamentare">
@@ -584,7 +593,7 @@
                </div>
             </div>
         </div>
-    
+
         <h3 class="ui dividing header">Scegli il periodo</h3>
         
         <div class="inline fields">
@@ -601,7 +610,7 @@
                 </div>
             </div>
         </div>
-    
+
         <div class="eight wide two fields" id="dates_block">
             <div class="four wide field">
                 <label>Dal mese:</label>
@@ -642,7 +651,7 @@
 
         <h3 class="ui dividing header">Calcola l'importo richiesto nel periodo selezionato</h3>
         <button class="ui submit teal button" type="submit">Esegui</button>
-    
+
     </form>
 
     <div class="ui equal width grid">
@@ -651,7 +660,7 @@
                   © 2017-2018 Emanuele Zeppieri
               </div>
               <div class="column right aligned">
-                  Ver. 21.0.0.2018-01-22
+                  Ver. 25.0.0.2018-01-26
               </div>
         </div>
     </div>
@@ -671,7 +680,7 @@
 <div class="ui basic modal" id="info_page">
 
     <div class="content">
-    
+
         <div class="ui yellow message">
             <p>
             <em>CoRe M5S</em> nasce come iniziativa privata, spontanea, libera e gratuita dell'autore,
@@ -698,12 +707,11 @@
             <h3>A cosa serve quest'applicazione?</h3>
             <h4 class="ui horizontal inverted divider"><i class="icon diamond"></i></h4>
             <div>
-                Attraverso il sito <a href="https://www.beppegrillo.it/tirendiconto.it/trasparenza/" target="_blank">Ti rendi conto?!?!?!?</a>
+                Attraverso il sito <a href="https://www.ilblogdellestelle.it/tirendiconto.it/trasparenza/" target="_blank">TiRendiconto</a>
                 è possibile controllare le somme restituite dai parlamentari del Movimento 5 Stelle. Tuttavia tale verifica può essere effettuata
                 soltanto su un singolo mese alla volta, rendendo così disagevole il calcolo degli importi
                 su un arco di tempo più esteso. L'applicazione <em>CoRe M5S</em> colma questa lacuna, permettendo di controllare facilmente,
-                per ogni parlamentare,
-                sia l'importo totale che l'importo medio mensile restituito in un intervallo di tempo arbitrario.
+                per ogni parlamentare, sia l'importo totale che l'importo medio mensile restituito in un intervallo di tempo arbitrario.
                 CoRe M5S produce inoltre una sintesi dei dati più chiara e leggibile, ed offre un'interfaccia in grado di adattarsi
                 automaticamente sia ai PC che ai dispositivi mobili.
             </div>
@@ -714,11 +722,11 @@
             <h4 class="ui horizontal inverted divider"><i class="icon diamond"></i></h4>
             <div>
                 Certamente: i dati mostrati da CoRe M5S sono esattamente quelli pubblicati su
-                <a href="https://www.beppegrillo.it/tirendiconto.it/trasparenza/" target="_blank">Ti rendi conto?!?!?!?</a>,
+                <a href="https://www.ilblogdellestelle.it/tirendiconto.it/trasparenza/" target="_blank">TiRendiconto</a>,
                 che vengono prelevati e utilizzati senza alcuna alterazione, con l'eccezione del caso descritto nella risposta successiva.
                 Per motivi di leggibilità, gli importi mostrati da CoRe M5S sono arrotondati all'unità di Euro, mentre gli
                 importi su
-                <a href="https://www.beppegrillo.it/tirendiconto.it/trasparenza/" target="_blank">Ti rendi conto?!?!?!?</a>
+                <a href="https://www.ilblogdellestelle.it/tirendiconto.it/trasparenza/" target="_blank">TiRendiconto</a>
                 appaiono al centesimo di Euro: tra i due potrà pertanto esservi una differenza massima di 50 centesimi di Euro.
                 Si rimarca inoltre che, essendo il codice sorgente di CoRe M5S aperto, chiunque ha la possibilità di
                 controllarne la correttezza.
@@ -730,7 +738,7 @@
             <h4 class="ui horizontal inverted divider"><i class="icon diamond"></i></h4>
             <div>
                 Limitatamente ai soli mesi di Marzo, Aprile e Maggio 2013 (ovvero i primi 3 mesi della legislatura), i dati presenti su
-                <a href="https://www.beppegrillo.it/tirendiconto.it/trasparenza/" target="_blank">Ti rendi conto?!?!?!?</a>
+                <a href="https://www.ilblogdellestelle.it/tirendiconto.it/trasparenza/" target="_blank">TiRendiconto</a>
                 presentano alcuni problemi, raggruppabili nelle segunti due categorie:
                 <div class="ui inverted ordered list">
                     <div class="item">
@@ -774,7 +782,7 @@
             <div>
                 Perché il parlamentare in questione ha pubblicato dati incoerenti! A titolo di esempio, si prendano i dati
                 pubblicati dal parlamentare SANTANGELO Maurizio nel mese di Ottobre 2017
-                (<a href="https://www.beppegrillo.it/tirendiconto.it/trasparenza/rendicontazione.php?user=152&mese=58&tipo=S" target="_blank">rinvenibili qui in originale</a>),
+                (<a href="https://www.ilblogdellestelle.it/tirendiconto.it/trasparenza/rendicontazione.php?user=152&mese=58&tipo=S" target="_blank">rinvenibili qui in originale</a>),
                 e si osservi come si dichiara dapprima che è stato effettuato un bonifico di restituzione per un importo TOTALE
                 di 1.800,00 Euro, mentre poi si afferma che, per la sola parte relativa all'indennità, è stato restituito
                 un importo pari a 1.931,25 Euro, che è maggiore dell'importo totale. In generale, la responsabilità di dati
@@ -839,7 +847,7 @@
             <h3>Perché CoRe M5S usa i cookie, e quali?</h3>
             <h4 class="ui horizontal inverted divider"><i class="icon diamond"></i></h4>
             <div>
-                CoRe M5S utilizza esclusivamente i cookie di Google Analytics, servizio che risulta di estrema utilità
+                CoRe M5S utilizza unicamente i cookie di Google Analytics, servizio che risulta di estrema utilità
                 per lo sviluppo dell'applicazione, in quanto fornisce informazioni quali il dispositivo ed il browser degli utenti,
                 che permettono di calibrare opportunamente la UI ed altri aspetti dell'applicazione medesima.
             </div>
@@ -910,7 +918,7 @@
                 CoRe M5S usa il <a href="http://semver.org/" target="_blank">Semantic Versioning</a>, con l'aggiunta
                 di un quarto campo dopo il campo PATCH,
                 che viene aggiornato se e solo se vengono aggiornati i dati delle restituzioni prelevati dal sito
-                <a href="https://www.beppegrillo.it/tirendiconto.it/trasparenza/" target="_blank">Ti rendi conto?!?!?!?</a>
+                <a href="https://www.ilblogdellestelle.it/tirendiconto.it/trasparenza/" target="_blank">TiRendiconto</a>
                 (il campo predetto contiene la data, in formato AAAA-MM-GG, dell'ultima acquisizione dei dati effettuata).
             </div>
         </div>

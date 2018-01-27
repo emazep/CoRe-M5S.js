@@ -11,7 +11,7 @@ il quale non è affiliato in alcun modo né ha alcun contatto con il Movimento 5
 
 ### A cosa serve quest'applicazione?
 
-Attraverso il sito <a href="https://www.beppegrillo.it/tirendiconto.it/trasparenza/">Ti rendi conto?!?!?!?</a> è possibile controllare le somme restituite dai parlamentari del Movimento 5 Stelle. Tuttavia tale verifica può essere effettuata soltanto su un singolo mese alla volta, rendendo così disagevole il calcolo dell'importo totale restituito da un parlamentare in un arco di tempo più ampio. L'applicazione CoRe M5S colma questa lacuna, permettendo di controllare facilmente l'importo totale restituito da ogni parlamentare in un intervallo di tempo arbitrario. Inoltre CoRe M5S offre una sintesi dei dati che dovrebbe risultare più chiara e leggibile.
+Attraverso il sito <a href="https://www.ilblogdellestelle.it/tirendiconto.it/trasparenza/">TiRendiconto</a> è possibile controllare le somme restituite dai parlamentari del Movimento 5 Stelle. Tuttavia tale verifica può essere effettuata soltanto su un singolo mese alla volta, rendendo così disagevole il calcolo dell'importo totale restituito da un parlamentare in un arco di tempo più ampio. L'applicazione CoRe M5S colma questa lacuna, permettendo di controllare facilmente l'importo totale restituito da ogni parlamentare in un intervallo di tempo arbitrario. Inoltre CoRe M5S offre una sintesi dei dati che dovrebbe risultare più chiara e leggibile.
 
 ### L'esportazione dei risultati come immagine non funziona bene!
 
@@ -58,7 +58,7 @@ mentre gli strumenti di sviluppo adottati sono:
 
 CoRe M5S usa il [Semantic Versioning](http://semver.org/), con l'aggiunta di un quarto campo dopo il campo PATCH,
 che viene aggiornato se e solo se vengono aggiornati i dati delle restituzioni prelevati dal sito
-<a href="https://www.beppegrillo.it/tirendiconto.it/trasparenza/">Ti rendi conto?!?!?!?</a>
+<a href="https://www.ilblogdellestelle.it/tirendiconto.it/trasparenza/">TiRendiconto</a>
 (il campo predetto contiene la data, in formato AAAA-MM-GG, dell'ultima acquisizione dei dati effettuata).
 
 ## Autore
