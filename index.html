@@ -76,7 +76,7 @@
         <div class="ui equal width grid">
             <div class="row bottom aligned">
                 <div class="column left aligned">
-                    Dati prelevati da <a href="https://www.ilblogdellestelle.it/tirendiconto.it/trasparenza/" target="_blank">TiRendiconto</a> il 26/01/2018
+                    Fonte: <a href="https://www.ilblogdellestelle.it/tirendiconto.it/trasparenza/" target="_blank">TiRendiconto</a> 26/01/2018
                 </div>
                 <div class="column right aligned">
                     <button class="ui compact labeled icon button" onclick="$('#info_page').modal('show')"><i class="info icon"></i>Informazioni</button>
@@ -638,7 +638,7 @@
             <div class="field">
                 <div class="ui radio checkbox">
                     <input name="value_type" checked="checked" type="radio" value="total">
-                    <label>Importo totale</label>
+                    <label>Importo cumulato</label>
                 </div>
             </div>
             <div class="field">
@@ -660,7 +660,7 @@
                   © 2017-2018 Emanuele Zeppieri
               </div>
               <div class="column right aligned">
-                  Ver. 25.0.1.2018-01-26
+                  Ver. 26.0.0.2018-01-26
               </div>
         </div>
     </div>
@@ -951,8 +951,9 @@
             <img class="ui bottom aligned tiny circular image" src="" id="user_pic_results">
             <span style="display: inline-block; margin-left:1em">
                 <i style="font-size: 2rem" id="user_name_results"></i>
-                <br><span id="result_type"></span> del periodo:
-                <br><span id="initial_month_results"></span><span id="final_month_results"></span>
+                <br>Importi <span id="result_type"></span>
+                <span id="initial_month_results"></span><span id="final_month_results"></span>
+                <br><span style="font-size:smaller">Fonte: <a href="https://www.ilblogdellestelle.it/tirendiconto.it/trasparenza/" target="_blank">TiRendiconto</a> 26/01/2018</span>
             </span>
         </p>
         <h4 style="color: Yellow" id="mesi_presuntivi"></h4>
@@ -1107,7 +1108,7 @@
         var form_values = get_form_values();
 
         if ( form_values.parlamentare_id == null || form_values.parlamentare_id == '' ) {
-            $("#error_message").text("Bisogna selezionare un parlamentare.");
+            $("#error_message").text("È necessario selezionare un parlamentare.");
             $("#form_error").modal('show');
             return false
         }
@@ -1239,7 +1240,7 @@
         }
         
         $("#result_type").text(
-        	value_type == 'mean' ? 'Medie mensili' : 'Totali'
+        	value_type == 'mean' ? 'medi mensili' : 'cumulati'
         );
         
         var presuntivi_months_text = '';
