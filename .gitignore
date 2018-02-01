@@ -1,5 +1,6 @@
 .README*
 .pydevproject
+npm-debug.log
 /.project
 /.settings/
 node_modules
