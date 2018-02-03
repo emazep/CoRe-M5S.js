@@ -660,7 +660,7 @@
                   © 2017-2018 Emanuele Zeppieri
               </div>
               <div class="column right aligned">
-                  Ver. 28.0.0.2018-02-01
+                  Ver. 28.0.2.2018-02-01
               </div>
         </div>
     </div>
@@ -727,7 +727,7 @@
                 Per motivi di leggibilità, gli importi mostrati da CoRe M5S sono arrotondati all'unità di Euro, mentre gli
                 importi su
                 <a href="https://www.ilblogdellestelle.it/tirendiconto.it/trasparenza/" target="_blank">TiRendiconto</a>
-                appaiono al centesimo di Euro: tra i due potrà pertanto esservi una differenza massima di 50 centesimi di Euro.
+                appaiono al centesimo di Euro: tra i due importi potrà pertanto esservi una differenza massima di 50 centesimi di Euro.
                 Si rimarca inoltre che, essendo il codice sorgente di CoRe M5S aperto, chiunque ha la possibilità di
                 controllarne la correttezza.
             </div>
@@ -786,10 +786,10 @@
                 e si osservi come si dichiara dapprima che è stato effettuato un bonifico di restituzione per un importo TOTALE
                 di 1.800,00 Euro, mentre poi si afferma che, per la sola parte relativa all'indennità, è stato restituito
                 un importo pari a 1.931,25 Euro, che è maggiore dell'importo totale. In generale, la responsabilità di dati
-                incoerenti/errati è da attribuirsi SEMPRE al parlamentare o comunque al sistema di pubblicazione dei dati del M5S,
+                incoerenti/errati è da attribuirsi al parlamentare o comunque al sistema di pubblicazione dei dati del M5S,
                 dal momento che, come già affermato, CoRe M5S si limita a prelevare tali dati e ad aggregarli, senza operare alterazioni
-                di sorta sui dati medesimi (fatto salvo l'irrilevante arrotondamento all'unità di Euro). Si precisa comunque che i casi
-                di dati incoerenti/errati sono estremamente rari.
+                di sorta sui dati medesimi (fatto salvo l'irrilevante arrotondamento all'unità di Euro nei risultati finali).
+                Si precisa comunque che i casi di dati incoerenti/errati sono estremamente rari.
             </div>
         </div>
 
@@ -832,9 +832,8 @@
             <div>
                 Risposta breve: lo so. Risposta lunga: non è semplice da fare interamente lato client
                 (in particolar modo su dispositivi touch)
-                come fa quest'applicazione, considerando che si è inteso generare i risultati
-                in formato testuale, per rendere possibile il copia e incolla degli stessi (un aiuto su questa funzionalità
-                dell'applicazione, purché fattivo, sarà grandemente apprezzato e pubblicizzato).
+                come fa quest'applicazione, considerando che si è scelto generare i risultati
+                in formato testuale, per renderne possibile il copia e incolla in altre applicazioni.
                 Workaround, in ordine di preferenza: utilizzate un browser recente (preferibilmente Firefox o Chrome),
                 preferibilmente su un PC e non su un dispositivo mobile; se aprite l'applicazione da facebook su
                 un dispositivo mobile, trasferitela nel browser esterno, perché nel browser integrato di facebook
@@ -861,7 +860,8 @@
                 Per chi fosse interessato ad estendere il progetto in termini di riusabilità, si consiglia piuttosto
                 la creazione di una libreria javascript disaccoppiata dalla UI.
                 La scelta dell'architettura serverless è resa possibile dal fatto che l'applicazione lavora su un db statico
-                di ridotte dimensioni (che può essere pertanto agevolmente contenuto nella RAM del client, anche nel caso di dispositivi mobili),
+                di ridotte dimensioni (che può essere pertanto agevolmente contenuto nella RAM del client, anche nel caso
+                di dispositivi mobili),
                 e comporta il vantaggio che l'applicazione medesima possa essere distribuita anche attraverso
                 servizi di hosting di sole pagine statiche (come GitHub Pages).
             </div>
@@ -899,7 +899,7 @@
         </div>
 
         <div class="ui inverted segment">
-            <h3>Posso utilizzare per conto mio quest'applicazione e modificarla?</h3>
+            <h3>Posso utilizzare quest'applicazione in altri contesti e posso modificarla?</h3>
             <h4 class="ui horizontal inverted divider"><i class="icon diamond"></i></h4>
             <div>
                 Risposta breve: sì. Risposta lunga: il codice sorgente di CoRe M5S è rilasciato sotto
@@ -1006,7 +1006,7 @@
     <div id ="no_data_found_message">
         <h1 style="color: Yellow; margin-bottom: 2em">Nel periodo selezionato non sono presenti rendicontazioni del parlamentare.</h1>
     </div>
-    
+
     <div class="ui equal width grid">
         <div class="row bottom aligned">
             <div class="column left aligned">
@@ -1031,12 +1031,12 @@
 
 <script type="text/javascript">
     "use strict";
-    
+
     $(".dropdown").dropdown();
     $(".checkbox").checkbox();
-    
+
     var month_names = ['Gennaio', 'Febbraio', 'Marzo', 'Aprile', 'Maggio', 'Giugno', 'Luglio', 'Agosto', 'Settembre', 'Ottobre', 'Novembre', 'Dicembre'];
-    
+
     var calendar_settings = {
         type: "month",
         minDate: new Date(2013, 2),
@@ -1053,12 +1053,12 @@
     }
     $("#initial_month").calendar(calendar_settings);
     $("#final_month").calendar(calendar_settings);
-    
+
     var
         $dates_radio = $("input[name='timeframe']"),
         $dates_block = $("#dates_block")
     ;
-        
+
     function showhide_obj(current_value, show_value, $togglable_obj) {
         if ( current_value == show_value ) {
             $togglable_obj.show("slow")
@@ -1077,9 +1077,9 @@
         showhide_obj( $(this).val(), "custom_timeframe", $dates_block )
     });
     showhide_dates_onreload();
-    
+
     var $form = $("#search_form");
-    
+
     function get_form_values() {
         var $form = $("#search_form");
         return {
@@ -1229,63 +1229,63 @@
         $("#user_pic_results").attr('src', selected_user_pic_src);
         $("#user_name_results").text(user_name);
         $("#initial_month_results").text(initial_month);
-        
+
         var final_month_display = final_month_num === undefined ? final_month : month_num2text(final_month_num-1);
-        
+
         if ( initial_month == final_month ) {
-        	$("#final_month_results").hide()
+            $("#final_month_results").hide()
         } else {
             $("#final_month_results").text( ' - ' + final_month_display );
             $("#final_month_results").show()
         }
-        
+
         $("#result_type").text(
-        	value_type == 'mean' ? 'medi mensili' : 'cumulati'
+            value_type == 'mean' ? 'medi mensili' : 'cumulati'
         );
-        
+
         var presuntivi_months_text = '';
         var presuntivi_month_nums_length = presuntivi_month_nums.length;
         for (i = 0; i < presuntivi_month_nums_length; i++) {
-        	presuntivi_months_text += month_num2text( presuntivi_month_nums[i]-1 ) + ', '
+            presuntivi_months_text += month_num2text( presuntivi_month_nums[i]-1 ) + ', '
         }
         if (presuntivi_months_text) {
-        	$("#mesi_presuntivi").text(
-        		'Gli importi relativi '                                       +
-        		(presuntivi_month_nums_length == 1 ? 'al mese ' : 'ai mesi ') +
-        		presuntivi_months_text + 'sono presuntivi.'
-        	).show()
+            $("#mesi_presuntivi").text(
+                'Gli importi relativi '                                       +
+                (presuntivi_month_nums_length == 1 ? 'al mese ' : 'ai mesi ') +
+                presuntivi_months_text + 'sono presuntivi.'
+            ).show()
         } else {
-        	$("#mesi_presuntivi").hide()
+            $("#mesi_presuntivi").hide()
         }
-        
+
         if ( stipendio != 0 && ! isNaN(stipendio) ) {
-        	var totale_percepito = stipendio + rimborso;
-        	$("#stipendio_rimborso")    .text( format_currency( Math.round(totale_percepito ) ) );
+            var totale_percepito = stipendio + rimborso;
+            $("#stipendio_rimborso")    .text( format_currency( Math.round(totale_percepito ) ) );
             $("#totale_restituito")     .text( format_currency( Math.round(totale_restituito) ) );
             $("#perc_totale_restituito").text(
-            	totale_percepito > 0 ? format_percent(totale_restituito / totale_percepito) :  '-'
+                totale_percepito > 0 ? format_percent(totale_restituito / totale_percepito) :  '-'
             );
-    
+
             $("#stipendio")                .text( format_currency( Math.round(stipendio ) )           );
             $("#stipendio_restituito")     .text( format_currency( Math.round(stipendio_restituito) ) );
             $("#perc_stipendio_restituito").text(
-            	stipendio > 0 ? format_percent(stipendio_restituito / stipendio) : '-'
+                stipendio > 0 ? format_percent(stipendio_restituito / stipendio) : '-'
             );
-    
+
             $("#rimborso")                .text( format_currency( Math.round(rimborso ) )           );
             $("#rimborso_restituito")     .text( format_currency( Math.round(rimborso_restituito) ) );
             $("#perc_rimborso_restituito").text(
-            		rimborso > 0 ? format_percent(rimborso_restituito / rimborso) : '-'
+                rimborso > 0 ? format_percent(rimborso_restituito / rimborso) : '-'
             );
-            
+
             $("#no_data_found_message").hide();
             $("#statistics").show()
         } else {
             $("#statistics").hide();
-        	$("#no_data_found_message").show()
+            $("#no_data_found_message").show()
         }
 
-        $("#results").modal('show');
+        $("#results").modal('show')
     }
 
     function results2image() {
@@ -1295,7 +1295,7 @@
             $("#initial_month_results").text().replace(/ /g,"-") + '_' +
             $("#final_month_results")  .text().replace(/^[-\s]+/,'').replace(/ /g,"-") + '.png'
         ;
-        
+
         var body_original_color = $('body').css('background-color');
         $('body').css('background-color', 'Black');
         $('#github_ribbon').hide();
@@ -1313,7 +1313,7 @@
             })
         })
     }
-    
+
     $("#results2image").click(results2image)
 </script>
 
