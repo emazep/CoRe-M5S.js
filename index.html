@@ -67,7 +67,9 @@
 
 <body>
 
-<a href="https://github.com/emazep/CoRe-M5S.js" id="github_ribbon" target="_blank"><img style="position: absolute; top: 0; right: 0; border: 0; z-index: -1" src="https://camo.githubusercontent.com/e7bbb0521b397edbd5fe43e7f760759336b5e05f/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677265656e5f3030373230302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png"></a>
+<a href="https://github.com/emazep/CoRe-M5S.js" id="github_ribbon" target="_blank">
+    <img style="position: absolute; top: 0; right: 0; border: 0" src="https://camo.githubusercontent.com/e7bbb0521b397edbd5fe43e7f760759336b5e05f/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677265656e5f3030373230302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png">
+</a>
 
 <div class="ui container" id="main_content">
 
@@ -660,7 +662,7 @@
                   © 2017-2018 Emanuele Zeppieri
               </div>
               <div class="column right aligned">
-                  Ver. 28.0.3.2018-02-01
+                  Ver. 29.0.0.2018-02-01
               </div>
         </div>
     </div>
@@ -723,7 +725,8 @@
             <div>
                 Certamente: i dati mostrati da CoRe M5S sono esattamente quelli pubblicati su
                 <a href="https://www.ilblogdellestelle.it/tirendiconto.it/trasparenza/" target="_blank">TiRendiconto</a>,
-                che vengono prelevati e utilizzati senza alcuna alterazione, con l'eccezione del caso descritto nella risposta successiva.
+                che vengono prelevati e utilizzati senza alcuna alterazione, con l'eccezione del caso (obbligato)
+                descritto nella risposta successiva.
                 Per motivi di leggibilità, gli importi mostrati da CoRe M5S sono arrotondati all'unità di Euro, mentre gli
                 importi su
                 <a href="https://www.ilblogdellestelle.it/tirendiconto.it/trasparenza/" target="_blank">TiRendiconto</a>
@@ -739,7 +742,7 @@
             <div>
                 Limitatamente ai soli mesi di Marzo, Aprile e Maggio 2013 (ovvero i primi 3 mesi della legislatura), i dati presenti su
                 <a href="https://www.ilblogdellestelle.it/tirendiconto.it/trasparenza/" target="_blank">TiRendiconto</a>
-                presentano alcuni problemi, raggruppabili nelle segunti due categorie:
+                presentano alcuni problemi, raggruppabili nelle seguenti due categorie (disgiunte):
                 <div class="ui inverted ordered list">
                     <div class="item">
                         per alcuni parlamentari, i dati in <em>formato testuale</em> sono del tutto assenti (sono presenti soltanto
@@ -785,10 +788,11 @@
                 (<a href="https://www.ilblogdellestelle.it/tirendiconto.it/trasparenza/rendicontazione.php?user=152&mese=58&tipo=S" target="_blank">rinvenibili qui in originale</a>),
                 e si osservi come si dichiara dapprima che è stato effettuato un bonifico di restituzione per un importo TOTALE
                 di 1.800,00 Euro, mentre poi si afferma che, per la sola parte relativa all'indennità, è stato restituito
-                un importo pari a 1.931,25 Euro, che è maggiore dell'importo totale. In generale, la responsabilità di dati
+                un importo pari a 1.931,25 Euro, che è chiaramente incompatibile con l'importo totale, essendo maggiore di esso.
+                In generale, la responsabilità di dati
                 incoerenti/errati è da attribuirsi al parlamentare o comunque al sistema di pubblicazione dei dati del M5S,
                 dal momento che, come già affermato, CoRe M5S si limita a prelevare tali dati e ad aggregarli, senza operare alterazioni
-                di sorta sui dati medesimi (fatto salvo l'irrilevante arrotondamento all'unità di Euro nei risultati finali).
+                di sorta sui dati medesimi (fatte salve le eccezioni di cui alla risposta precedente).
                 Si precisa comunque che i casi di dati incoerenti/errati sono estremamente rari.
             </div>
         </div>
@@ -811,9 +815,9 @@
                 del parlamentare selezionato sono disponibili. L'ultimo mese con i dati trovato, che viene indicato
                 nell'intestazione della pagina dei risultati, può pertanto essere precedente al mese finale impostato dall'utente.
                 Nel caso in cui venga selezionato un intervallo di uno o più mesi tutti privi di rendicontazioni,
-                nella pagina dei risultati varrà mostrato un messaggio che avverte dell'assenza di dati in quel periodo.
-                Questa modalità di esposizione dei periodi senza dati è difforme da quella delle versioni precedenti di CoRe M5S
-                (per l'esattezza dalla versione 5.0.0.* in poi), perché si ritiene che
+                nella pagina dei risultati verrà mostrato un messaggio che avverte dell'assenza di dati in quel periodo.
+                Questa modalità di esposizione dei periodi senza dati è stata  di CoRe M5S
+                (per l'esattezza dalla versione 5.0.0.* in poi), poiché si ritiene che
                 possa rendere più chiara la lettura della situazione.
             </div>
         </div>
@@ -832,13 +836,14 @@
             <div>
                 Risposta breve: lo so. Risposta lunga: non è semplice da fare interamente lato client
                 (in particolar modo su dispositivi touch)
-                come fa quest'applicazione, considerando che si è scelto generare i risultati
-                in formato testuale, per renderne possibile il copia e incolla in altre applicazioni.
-                Workaround, in ordine di preferenza: utilizzate un browser recente (preferibilmente Firefox o Chrome),
-                preferibilmente su un PC e non su un dispositivo mobile; se aprite l'applicazione da facebook su
-                un dispositivo mobile, trasferitela nel browser esterno, perché nel browser integrato di facebook
-                la generazione dell'immagine sembra non funzionare (tutto il resto funziona correttamente);
-                in estremo subordine, fate uno screenshot con un tool esterno.
+                come fa quest'applicazione, considerando che si è scelto di generare i risultati
+                in formato testuale (per renderne possibile il copia e incolla in altre applicazioni).
+                I workaround sono, in ordine di preferenza: utilizzare un browser recente (preferibilmente Firefox o Chrome),
+                preferibilmente su un PC e non su un dispositivo mobile; se si apre CoRe M5S da Facebook su
+                un dispositivo touch, trasferirla nel browser esterno, perché nel browser integrato di Facebook
+                la generazione dell'immagine sembra non funzionare, almeno su certe versioni di Android
+                (tutto il resto funziona invece correttamente);
+                in estremo subordine, fare uno screenshot con un tool esterno.
             </div>
         </div>
 
