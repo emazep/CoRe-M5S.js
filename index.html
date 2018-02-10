@@ -32,7 +32,7 @@
     <script src="html2canvas.min.js"></script>
     <script src="FileSaver.min.js"></script>
 
-    <script src="2018-02-05_tirendiconto.min.js"></script>
+    <script src="2018-02-09_tirendiconto.min.js"></script>
         
     <title>CoRe M5S</title>
 
@@ -78,7 +78,7 @@
         <div class="ui equal width grid">
             <div class="row bottom aligned">
                 <div class="column left aligned">
-                    Fonte: <a href="https://www.ilblogdellestelle.it/tirendiconto.it/trasparenza/" target="_blank">TiRendiconto</a> 05/02/2018
+                    Fonte: <a href="http://www.tirendiconto.it/trasparenza/" target="_blank">TiRendiconto</a> 09/02/2018
                 </div>
                 <div class="column right aligned">
                     <button class="ui compact labeled icon button" onclick="$('#info_page').modal('show')"><i class="info icon"></i>Informazioni</button>
@@ -662,7 +662,7 @@
                   © 2017-2018 Emanuele Zeppieri
               </div>
               <div class="column right aligned">
-                  Ver. 29.0.0.2018-02-05
+                  Ver. 30.0.0.2018-02-09
               </div>
         </div>
     </div>
@@ -709,7 +709,7 @@
             <h3>A cosa serve quest'applicazione?</h3>
             <h4 class="ui horizontal inverted divider"><i class="icon diamond"></i></h4>
             <div>
-                Attraverso il sito <a href="https://www.ilblogdellestelle.it/tirendiconto.it/trasparenza/" target="_blank">TiRendiconto</a>
+                Attraverso il sito <a href="http://www.tirendiconto.it/trasparenza/" target="_blank">TiRendiconto</a>
                 è possibile controllare le somme restituite dai parlamentari del Movimento 5 Stelle. Tuttavia tale verifica può essere effettuata
                 soltanto su un singolo mese alla volta, rendendo così disagevole il calcolo degli importi
                 su un arco di tempo più esteso. L'applicazione <em>CoRe M5S</em> colma questa lacuna, permettendo di controllare facilmente,
@@ -724,12 +724,12 @@
             <h4 class="ui horizontal inverted divider"><i class="icon diamond"></i></h4>
             <div>
                 Certamente: i dati mostrati da CoRe M5S sono esattamente quelli pubblicati su
-                <a href="https://www.ilblogdellestelle.it/tirendiconto.it/trasparenza/" target="_blank">TiRendiconto</a>,
+                <a href="http://www.tirendiconto.it/trasparenza/" target="_blank">TiRendiconto</a>,
                 che vengono prelevati e utilizzati senza alcuna alterazione, con l'eccezione del caso (obbligato)
                 descritto nella risposta successiva.
                 Per motivi di leggibilità, gli importi mostrati da CoRe M5S sono arrotondati all'unità di Euro, mentre gli
                 importi su
-                <a href="https://www.ilblogdellestelle.it/tirendiconto.it/trasparenza/" target="_blank">TiRendiconto</a>
+                <a href="http://www.tirendiconto.it/trasparenza/" target="_blank">TiRendiconto</a>
                 appaiono al centesimo di Euro: tra i due importi potrà pertanto esservi una differenza massima di 50 centesimi di Euro.
                 Si rimarca inoltre che, essendo il codice sorgente di CoRe M5S aperto, chiunque ha la possibilità di
                 controllarne la correttezza.
@@ -741,7 +741,7 @@
             <h4 class="ui horizontal inverted divider"><i class="icon diamond"></i></h4>
             <div>
                 Limitatamente ai soli mesi di Marzo, Aprile e Maggio 2013 (ovvero i primi 3 mesi della legislatura), i dati presenti su
-                <a href="https://www.ilblogdellestelle.it/tirendiconto.it/trasparenza/" target="_blank">TiRendiconto</a>
+                <a href="http://www.tirendiconto.it/trasparenza/" target="_blank">TiRendiconto</a>
                 presentano alcuni problemi, raggruppabili nelle seguenti due categorie (disgiunte):
                 <div class="ui inverted ordered list">
                     <div class="item">
@@ -785,7 +785,7 @@
             <div>
                 Perché il parlamentare in questione ha pubblicato dati incoerenti! A titolo di esempio, si prendano i dati
                 pubblicati dal parlamentare SANTANGELO Maurizio nel mese di Ottobre 2017
-                (<a href="https://www.ilblogdellestelle.it/tirendiconto.it/trasparenza/rendicontazione.php?user=152&mese=58&tipo=S" target="_blank">rinvenibili qui in originale</a>),
+                (<a href="http://www.tirendiconto.it/trasparenza/rendicontazione.php?user=152&mese=58&tipo=S" target="_blank">rinvenibili qui in originale</a>),
                 e si osservi come si dichiara dapprima che è stato effettuato un bonifico di restituzione per un importo TOTALE
                 di 1.800,00 Euro, mentre poi si afferma che, per la sola parte relativa all'indennità, è stato restituito
                 un importo pari a 1.931,25 Euro, che è chiaramente incompatibile con l'importo totale, essendo maggiore di esso.
@@ -923,7 +923,7 @@
                 CoRe M5S usa il <a href="http://semver.org/" target="_blank">Semantic Versioning</a>, con l'aggiunta
                 di un quarto campo dopo il campo PATCH,
                 che viene aggiornato se e solo se vengono aggiornati i dati delle restituzioni prelevati dal sito
-                <a href="https://www.ilblogdellestelle.it/tirendiconto.it/trasparenza/" target="_blank">TiRendiconto</a>
+                <a href="http://www.tirendiconto.it/trasparenza/" target="_blank">TiRendiconto</a>
                 (il campo predetto contiene la data, in formato AAAA-MM-GG, dell'ultima acquisizione dei dati effettuata).
             </div>
         </div>
@@ -958,7 +958,7 @@
                 <i style="font-size: 2rem" id="user_name_results"></i>
                 <br>Importi <span id="result_type"></span>
                 <span id="initial_month_results"></span><span id="final_month_results"></span>
-                <br><span style="font-size:smaller">Fonte: <a href="https://www.ilblogdellestelle.it/tirendiconto.it/trasparenza/" target="_blank">TiRendiconto</a> 05/02/2018</span>
+                <br><span style="font-size:smaller">Fonte: <a href="http://www.tirendiconto.it/trasparenza/" target="_blank">TiRendiconto</a> 09/02/2018</span>
             </span>
         </p>
         <h4 style="color: Yellow" id="mesi_presuntivi"></h4>

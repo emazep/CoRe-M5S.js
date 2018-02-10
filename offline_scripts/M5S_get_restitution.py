@@ -8,11 +8,14 @@ from urllib.parse import urlparse, parse_qsl
 from string import Template
 import json
 import sys
+import logging
+
+#logging.basicConfig(level=logging.DEBUG)
 
 HTML_PARSER = 'lxml'
 UA = UserAgent()
 
-PEOPLEDIR_URL    = 'https://www.ilblogdellestelle.it/tirendiconto.it/trasparenza/'
+PEOPLEDIR_URL    = 'http://www.tirendiconto.it/trasparenza/'
 PERSON_URL_TEMPL = PEOPLEDIR_URL + 'rendicontazione.php?mese=${mese}&user=${user}&tipo=${tipo}'
 person_url_templ = Template(PERSON_URL_TEMPL)
 
@@ -40,7 +43,7 @@ group.add_argument(
 group.add_argument( '--all', action='store_true', help = 'Scarica i dati di tutti i parlamentari del M5S.' )
 args = parser.parse_args()
 
-people_dir_page = requests.get( PEOPLEDIR_URL, {'User-Agent': UA.random} )
+people_dir_page = requests.get( PEOPLEDIR_URL, headers = {'User-Agent': UA.random} )
 people_dir_soup = BeautifulSoup(people_dir_page.text, HTML_PARSER)
 people_table = people_dir_soup.findAll('table')[0]
 
