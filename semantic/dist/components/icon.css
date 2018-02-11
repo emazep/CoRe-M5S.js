@@ -1,5 +1,5 @@
 /*!
- * # Semantic UI 2.2.13 - Icon
+ * # Semantic UI 2.2.14 - Icon
  * http://github.com/semantic-org/semantic-ui/
  *
  *
@@ -124,7 +124,7 @@ i.link.icons {
   cursor: pointer;
   opacity: 0.8;
   -webkit-transition: opacity 0.1s ease;
-  transition: opacity 0.1s ease;
+          transition: opacity 0.1s ease;
 }
 i.link.icon:hover,
 i.link.icons:hover {
@@ -139,15 +139,13 @@ i.circular.icon {
   border-radius: 500em !important;
   line-height: 1 !important;
   padding: 0.5em 0.5em !important;
-  -webkit-box-shadow: 0em 0em 0em 0.1em rgba(0, 0, 0, 0.1) inset;
-          box-shadow: 0em 0em 0em 0.1em rgba(0, 0, 0, 0.1) inset;
+  box-shadow: 0em 0em 0em 0.1em rgba(0, 0, 0, 0.1) inset;
   width: 2em !important;
   height: 2em !important;
 }
 i.circular.inverted.icon {
   border: none;
-  -webkit-box-shadow: none;
-          box-shadow: none;
+  box-shadow: none;
 }
 
 /*-------------------
@@ -190,13 +188,11 @@ i.bordered.icon {
   width: 2em;
   height: 2em;
   padding: 0.5em 0.41em !important;
-  -webkit-box-shadow: 0em 0em 0em 0.1em rgba(0, 0, 0, 0.1) inset;
-          box-shadow: 0em 0em 0em 0.1em rgba(0, 0, 0, 0.1) inset;
+  box-shadow: 0em 0em 0em 0.1em rgba(0, 0, 0, 0.1) inset;
 }
 i.bordered.inverted.icon {
   border: none;
-  -webkit-box-shadow: none;
-          box-shadow: none;
+  box-shadow: none;
 }
 
 /*-------------------

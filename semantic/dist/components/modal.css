@@ -1,5 +1,5 @@
 /*!
- * # Semantic UI 2.2.13 - Modal
+ * # Semantic UI 2.2.14 - Modal
  * http://github.com/semantic-org/semantic-ui/
  *
  *
@@ -22,8 +22,7 @@
   text-align: left;
   background: #FFFFFF;
   border: none;
-  -webkit-box-shadow: 1px 3px 3px 0px rgba(0, 0, 0, 0.2), 1px 3px 15px 2px rgba(0, 0, 0, 0.2);
-          box-shadow: 1px 3px 3px 0px rgba(0, 0, 0, 0.2), 1px 3px 15px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: 1px 3px 3px 0px rgba(0, 0, 0, 0.2), 1px 3px 15px 2px rgba(0, 0, 0, 0.2);
   -webkit-transform-origin: 50% 25%;
           transform-origin: 50% 25%;
   border-radius: 0.28571429rem;
@@ -80,8 +79,7 @@
   background: #FFFFFF;
   margin: 0em;
   padding: 1.25rem 1.5rem;
-  -webkit-box-shadow: none;
-          box-shadow: none;
+  box-shadow: none;
   color: rgba(0, 0, 0, 0.85);
   border-bottom: 1px solid rgba(34, 36, 38, 0.15);
 }
@@ -265,8 +263,7 @@
     width: 100% !important;
     margin: 0em !important;
     padding: 1rem 0rem !important;
-    -webkit-box-shadow: none;
-            box-shadow: none;
+    box-shadow: none;
   }
   
 /* Let Buttons Stack */
@@ -284,8 +281,7 @@
 ---------------*/
 
 .ui.inverted.dimmer > .ui.modal {
-  -webkit-box-shadow: 1px 3px 10px 2px rgba(0, 0, 0, 0.2);
-          box-shadow: 1px 3px 10px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: 1px 3px 10px 2px rgba(0, 0, 0, 0.2);
 }
 
 
@@ -297,8 +293,7 @@
   background-color: transparent;
   border: none;
   border-radius: 0em;
-  -webkit-box-shadow: none !important;
-          box-shadow: none !important;
+  box-shadow: none !important;
   color: #FFFFFF;
 }
 .ui.basic.modal > .header,
@@ -364,7 +359,9 @@
   position: fixed;
 }
 .modals.dimmer .ui.scrolling.modal {
-  position: static !important;
+  position: relative !important;
+  left: auto !important;
+  top: auto !important;
   margin: 3.5rem auto !important;
 }
 

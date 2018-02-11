@@ -61,6 +61,14 @@
             -2px 1px #cdd2d5,
             -2px 3px #808d93;
         }
+        
+        .boxed-text {
+            display: inline-block;
+            border: 2px solid lightgrey;
+            border-radius: 4px;
+            text-align: center;
+            padding: 0px 2px 0px 2px;
+        }
     </style>
 
 </head>
@@ -75,16 +83,19 @@
 
     <h1 class="ui dividing header inset-text"><span class="banner3d" style="color: Gold">CoRe M5S</span> (<em>Controllo Restituzione M5S</em>)</h1>
 
-        <div class="ui equal width grid">
-            <div class="row bottom aligned">
-                <div class="column left aligned">
-                    Fonte: <a href="http://www.tirendiconto.it/trasparenza/" target="_blank">TiRendiconto</a> 09/02/2018
-                </div>
-                <div class="column right aligned">
-                    <button class="ui compact labeled icon button" onclick="$('#info_page').modal('show')"><i class="info icon"></i>Informazioni</button>
-                </div>
+    <div class="ui equal width grid">
+        <div class="row bottom aligned">
+            <div class="column left aligned">
+                Fonte: <a href="http://www.tirendiconto.it/trasparenza/" target="_blank">TiRendiconto</a> 09/02/2018
+            </div>
+            <div class="column center aligned">
+                <span style="font-size: x-large">A</span>: <span class="boxed-text">Ctrl</span> <span class="boxed-text">+</span>&nbsp;&nbsp;&nbsp;<span style="font-size: small">A</span>: <span class="boxed-text">Ctrl</span> <span class="boxed-text">-</span>
+            </div>
+            <div class="column right aligned">
+                <button class="ui compact labeled icon button" onclick="$('#info_page').modal('show')"><i class="info icon"></i>Informazioni</button>
             </div>
         </div>
+    </div>
 
     <form class="ui form segment" id="search_form">
 
@@ -662,7 +673,7 @@
                   © 2017-2018 Emanuele Zeppieri
               </div>
               <div class="column right aligned">
-                  Ver. 40.0.0.2018-02-09
+                  Ver. 42.0.0.2018-02-09
               </div>
         </div>
     </div>
@@ -1016,7 +1027,7 @@
     </div>
     
     <div id ="no_data_found_message">
-        <h1 style="color: Yellow; margin-bottom: 2em">Nel periodo selezionato non sono presenti rendicontazioni del parlamentare.</h1>
+        <h1 style="color: Yellow; margin-bottom: 2em">Nel periodo selezionato non sono presenti rendicontazioni del parlamentare</h1>
     </div>
 
     <div class="ui equal width grid">
@@ -1264,7 +1275,7 @@
             $("#mesi_presuntivi").text(
                 'Gli importi relativi '                                       +
                 (presuntivi_month_nums_length == 1 ? 'al mese ' : 'ai mesi ') +
-                presuntivi_months_text + 'sono presuntivi.'
+                presuntivi_months_text + 'sono presuntivi'
             ).show()
         } else {
             $("#mesi_presuntivi").hide()
