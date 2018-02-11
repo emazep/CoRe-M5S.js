@@ -89,7 +89,7 @@
             <div class="column left aligned">
                 Fonte: <a href="http://www.tirendiconto.it/trasparenza/" target="_blank">TiRendiconto</a> 09/02/2018
             </div>
-            <div class="column center aligned" id="fontsizehelp">
+            <div class="column center aligned" id="fontsizehelp" style="display:none">
                 <span style="font-size:x-small"><span style="white-space:nowrap"><span style="font-size:x-large">A</span>&nbsp;<span class="boxed-text">Ctrl</span>&nbsp;<span class="boxed-text">+</span></span> <wbr> <span style="white-space:nowrap"><span style="font-size:small">A</span>&nbsp;<span class="boxed-text">Ctrl</span>&nbsp;<span class="boxed-text">-</span></span></span>
             </div>
             <div class="column right aligned">
@@ -674,7 +674,7 @@
                   © 2017-2018 Emanuele Zeppieri
               </div>
               <div class="column right aligned">
-                  Ver. 42.0.6.2018-02-09
+                  Ver. 42.0.10.2018-02-09
               </div>
         </div>
     </div>
@@ -1053,11 +1053,12 @@
 </div>
 
 
+
 <script type="text/javascript">
     "use strict";
     
-    if (jQuery.browser.mobile) {
-        $("#fontsizehelp").hide()
+    if (! jQuery.browser.mobile) {
+        $("#fontsizehelp").show()
     }
     
     $(".dropdown").dropdown();
