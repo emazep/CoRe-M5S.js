@@ -33,7 +33,7 @@
     <script src="FileSaver.min.js"></script>
     <script src="detectmobilebrowser.js"></script>
 
-    <script src="2018-02-15_tirendiconto.min.js"></script>
+    <script src="2018-02-21_tirendiconto.min.js"></script>
         
     <title>CoRe M5S</title>
 
@@ -87,7 +87,7 @@
     <div class="ui equal width grid">
         <div class="row bottom aligned">
             <div class="column left aligned">
-                Fonte: <a href="http://www.tirendiconto.it/trasparenza/" target="_blank">TiRendiconto</a> 15/02/2018
+                Fonte: <a href="http://www.tirendiconto.it/trasparenza/" target="_blank">TiRendiconto</a> 21/02/2018
             </div>
             <div class="column center aligned" id="fontsizehelp" style="display:none">
                 <span style="font-size:x-small"><span style="white-space:nowrap"><span style="font-size:x-large">A</span>&nbsp;<span class="boxed-text">Ctrl</span>&nbsp;<span class="boxed-text">+</span></span> <wbr> <span style="white-space:nowrap"><span style="font-size:small">A</span>&nbsp;<span class="boxed-text">Ctrl</span>&nbsp;<span class="boxed-text">-</span></span></span>
@@ -674,7 +674,7 @@
                   © 2017-2018 Emanuele Zeppieri
               </div>
               <div class="column right aligned">
-                  Ver. 42.0.12.2018-02-15
+                  Ver. 45.0.0.2018-02-21
               </div>
         </div>
     </div>
@@ -738,13 +738,149 @@
                 Certamente: i dati mostrati da CoRe M5S sono esattamente quelli pubblicati su
                 <a href="http://www.tirendiconto.it/trasparenza/" target="_blank">TiRendiconto</a>,
                 che vengono prelevati e utilizzati senza alcuna alterazione, con l'eccezione del caso (obbligato)
-                descritto nella risposta successiva.
+                descritto nella risposta relativa alle criticità riscontrate nel reperimento dei dati, presente nel seguito di questa pagina.
                 Per motivi di leggibilità, gli importi mostrati da CoRe M5S sono arrotondati all'unità di Euro, mentre gli
                 importi su
                 <a href="http://www.tirendiconto.it/trasparenza/" target="_blank">TiRendiconto</a>
                 appaiono al centesimo di Euro: tra i due importi potrà pertanto esservi una differenza massima di 50 centesimi di Euro.
                 Si rimarca inoltre che, essendo il codice sorgente di CoRe M5S aperto, chiunque ha la possibilità di
                 controllarne la correttezza.
+            </div>
+        </div>
+
+        <div class="ui inverted segment">
+            <h3>Come vanno interpretati i dati nella pagina dei risultati?</h3>
+            <h4 class="ui horizontal inverted divider"><i class="icon diamond"></i></h4>
+            <div>
+
+<div class="inverted ui list">
+
+    <div class="item">
+        <i class="table icon"></i>
+        <div class="content">
+            <div class="header">Prima riga</div>
+            <div class="description">Mostra gli importi totali, ovvero la somma degli importi delle due righe successive.</div>
+            <div class="list">
+                <div class="item">
+                    <i class="euro sign icon"></i>
+                    <div class="content">
+                        <div class="header">Prima colonna</div>
+                        <div class="description">
+                            Contiene il totale netto percepito,
+                            ovvero lo stipendio netto + i rimborsi,
+                            ancora non decurtati delle restituzioni
+                            (in pratica è il totale netto percepito da ogni
+                            parlamentare, anche degli altri schieramenti).
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <i class="euro sign icon"></i>
+                    <div class="content">
+                        <div class="header">Seconda colonna</div>
+                        <div class="description">Contiene l'importo totale restituito, ovvero la quota stipendio restituita + la quota rimborsi restituita.</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <i class="percent sign icon"></i>
+                    <div class="content">
+                        <div class="header">Terza colonna</div>
+                        <div class="description">Contiene la percentuale del totale percepito che viene restituita.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="item">
+        <i class="table icon"></i>
+        <div class="content">
+            <div class="header">Seconda riga</div>
+            <div class="description">Mostra gli importi relativi allo stipendio netto.</div>
+            <div class="list">
+                <div class="item">
+                    <i class="euro sign icon"></i>
+                    <div class="content">
+                        <div class="header">Prima colonna</div>
+                        <div class="description">
+                            Contiene lo stipendio netto percepito dal parlamentare
+                            (lo stipendio lordo è pari a circa il doppio),
+                            ancora non decurtato della restituzione
+                            (in pratica è lo stipendio netto percepito da ogni
+                            parlamentare, anche degli altri schieramenti).
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <i class="euro sign icon"></i>
+                    <div class="content">
+                        <div class="header">Seconda colonna</div>
+                        <div class="description">Contiene la parte dello stipendio netto che viene restituita.</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <i class="percent sign icon"></i>
+                    <div class="content">
+                        <div class="header">Terza colonna</div>
+                        <div class="description">Contiene la percentuale dello stipendio netto restituita.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="item">
+        <i class="table icon"></i>
+        <div class="content">
+            <div class="header">Terza riga</div>
+            <div class="description">Mostra gli importi relativi ai rimborsi.</div>
+            <div class="list">
+                <div class="item">
+                    <i class="euro sign icon"></i>
+                    <div class="content">
+                        <div class="header">Prima colonna</div>
+                        <div class="description">
+                            Contiene i rimborsi totali percepiti dal parlamentare,
+                            ancora non decurtati della restituzione (in pratica
+                            si tratta dei rimborsi percepiti da ogni parlamentare,
+                            anche degli altri schieramenti).
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <i class="euro sign icon"></i>
+                    <div class="content">
+                        <div class="header">Seconda colonna</div>
+                        <div class="description">Contiene la parte dei rimborsi che viene restituita.</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <i class="percent sign icon"></i>
+                    <div class="content">
+                        <div class="header">Terza colonna</div>
+                        <div class="description">Contiene la percentuale dei rimborsi che viene restituita.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+                Per ogni ulteriore dettaglio riguardo il trattamento economico dei parlamentari nella XVI Legislatura,
+                si rimanda a <a href="http://leg16.camera.it/383?conoscerelacamera=4" target="_blank">questa pagina della Camera dei Deputati</a>.
+            </div>
+        </div>
+
+        <div class="ui inverted segment">
+            <h3>Cosa prescrive il regolamento del M5S riguardo le restituzioni?</h3>
+            <h4 class="ui horizontal inverted divider"><i class="icon diamond"></i></h4>
+            <div>
+                Le regole del M5S riguardo le restituzioni non sono del tutto chiare, ed esistono inoltre
+                diverse fonti che riportano informazioni tra loro contraddittorie. Pertanto non azzardiamo alcuna interpretazione,
+                limitandoci ad offrire <a href="https://www.movimento5stelle.it/listeciviche/liste/lissone/2012/11/codice-di-comportamento-eletti-movimento-5-stelle-in-parlamento.html" target="_blank">questa fonte</a>
+                e <a href="https://www.movimento5stelle.it/listeciviche/liste/estero/2013/08/intervista-ad-alessandro-di-battista-deputato-del-movimento-5-stelle.html" target="_blank">quest'altra fonte</a>
+                (che riportano peraltro informazioni tra loro incompatibili).
             </div>
         </div>
 
@@ -771,10 +907,10 @@
                 I predetti due casi sono stati gestiti come segue: nel primo caso, non essendo disponibile alcun dato, si sono
                 adottati i seguenti importi presuntivi:
                 <div class="ui bulleted list">
-                    <div class="item">stipendio mensile percepito: 5.000 Euro;</div>
-                    <div class="item">restituzione mensile stipendio: 2.000 Euro;</div>
+                    <div class="item">stipendio mensile netto percepito: 5.000 Euro;</div>
+                    <div class="item">quota stipendio mensile restituita: 2.000 Euro;</div>
                     <div class="item">rimborsi mensili percepiti: 7.000 Euro;</div>
-                    <div class="item">restituzione mensile rimborsi: 3.000 Euro;</div>
+                    <div class="item">quota rimborsi mensili restituita: 3.000 Euro;</div>
                 </div>
                 derivanti da una stima dei valori medi, <em>favorevole</em> al parlamentare
                 (ovvero stipendi e rimborsi sottostimati, restituzioni sovrastimate).
@@ -899,7 +1035,7 @@
                     <div class="item">JavaScript;</div>
                     <div class="item">jQuery;</div>
                     <div class="item">Semantic UI;</div>
-                    <div class="item">Python (per gli script offline di prelievo dei dati);</div>
+                    <div class="item">Python (scraper per il prelievo dei dati e minifier per la compressione degli stessi);</div>
                 </div>
                 
                 mentre gli strumenti di sviluppo adottati sono:
@@ -967,7 +1103,7 @@
                 <i style="font-size: 2rem" id="user_name_results"></i>
                 <br>Importi <span id="result_type"></span>
                 <span id="initial_month_results"></span><span id="final_month_results"></span>
-                <br><span style="font-size:smaller">Fonte: <a href="http://www.tirendiconto.it/trasparenza/" target="_blank">TiRendiconto</a> 15/02/2018</span>
+                <br><span style="font-size:smaller">Fonte: <a href="http://www.tirendiconto.it/trasparenza/" target="_blank">TiRendiconto</a> 21/02/2018</span>
             </span>
         </p>
         <h4 style="color: Yellow" id="mesi_presuntivi"></h4>
