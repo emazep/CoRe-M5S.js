@@ -33,7 +33,7 @@
     <script src="FileSaver.min.js"></script>
     <script src="detectmobilebrowser.js"></script>
 
-    <script src="2018-02-21_tirendiconto.min.js"></script>
+    <script src="2018-02-25_tirendiconto.min.js"></script>
         
     <title>CoRe M5S</title>
 
@@ -70,6 +70,10 @@
             text-align: center;
             padding: 0px 2px 0px 2px;
         }
+        
+        .colored-info-title {
+            color: GoldenRod
+        }
     </style>
 
 </head>
@@ -87,7 +91,7 @@
     <div class="ui equal width grid">
         <div class="row bottom aligned">
             <div class="column left aligned">
-                Fonte: <a href="http://www.tirendiconto.it/trasparenza/" target="_blank">TiRendiconto</a> 21/02/2018
+                Fonte: <a href="http://www.tirendiconto.it/trasparenza/" target="_blank">TiRendiconto</a> 25/02/2018
             </div>
             <div class="column center aligned" id="fontsizehelp" style="display:none">
                 <span style="font-size:x-small"><span style="white-space:nowrap"><span style="font-size:x-large">A</span>&nbsp;<span class="boxed-text">Ctrl</span>&nbsp;<span class="boxed-text">+</span></span> <wbr> <span style="white-space:nowrap"><span style="font-size:small">A</span>&nbsp;<span class="boxed-text">Ctrl</span>&nbsp;<span class="boxed-text">-</span></span></span>
@@ -674,7 +678,7 @@
                   © 2017-2018 Emanuele Zeppieri
               </div>
               <div class="column right aligned">
-                  Ver. 45.0.0.2018-02-21
+                  Ver. 48.0.0.2018-02-25
               </div>
         </div>
     </div>
@@ -718,7 +722,7 @@
         </div>
 
         <div class="ui inverted segment">
-            <h3>A cosa serve quest'applicazione?</h3>
+            <h3 class="colored-info-title">1. A cosa serve quest'applicazione?</h3>
             <h4 class="ui horizontal inverted divider"><i class="icon diamond"></i></h4>
             <div>
                 Attraverso il sito <a href="http://www.tirendiconto.it/trasparenza/" target="_blank">TiRendiconto</a>
@@ -732,24 +736,47 @@
         </div>
 
         <div class="ui inverted segment">
-            <h3>I dati forniti da CoRe M5S sono attendibili?</h3>
+            <h3 class="colored-info-title">2. I dati forniti da CoRe M5S sono attendibili?</h3>
             <h4 class="ui horizontal inverted divider"><i class="icon diamond"></i></h4>
             <div>
                 Certamente: i dati mostrati da CoRe M5S sono esattamente quelli pubblicati su
                 <a href="http://www.tirendiconto.it/trasparenza/" target="_blank">TiRendiconto</a>,
-                che vengono prelevati e utilizzati senza alcuna alterazione, con l'eccezione del caso (obbligato)
-                descritto nella risposta relativa alle criticità riscontrate nel reperimento dei dati, presente nel seguito di questa pagina.
+                che vengono prelevati (mediante un apposito scraper) e utilizzati
+                senza alcun intervento manuale e senza alcuna alterazione,
+                con l'eccezione del caso (obbligato)
+                descritto nella risposta alla domanda n. 6 presente nel seguito di questa pagina.
                 Per motivi di leggibilità, gli importi mostrati da CoRe M5S sono arrotondati all'unità di Euro, mentre gli
                 importi su
                 <a href="http://www.tirendiconto.it/trasparenza/" target="_blank">TiRendiconto</a>
-                appaiono al centesimo di Euro: tra i due importi potrà pertanto esservi una differenza massima di 50 centesimi di Euro.
+                appaiono al centesimo di Euro: tra gli importi omologhi nei due sistemi
+                potrà pertanto esservi una differenza massima di 50 centesimi di Euro.
                 Si rimarca inoltre che, essendo il codice sorgente di CoRe M5S aperto, chiunque ha la possibilità di
-                controllarne la correttezza.
+                verificarne la correttezza.
             </div>
         </div>
 
         <div class="ui inverted segment">
-            <h3>Come vanno interpretati i dati nella pagina dei risultati?</h3>
+            <h3 class="colored-info-title">3. Perché talvolta i dati delle rendicontazioni appaiono incoerenti?</h3>
+            <h4 class="ui horizontal inverted divider"><i class="icon diamond"></i></h4>
+            <div>
+                Perché su <a href="http://www.tirendiconto.it/trasparenza/" target="_blank">TiRendiconto</a>
+                sono stati pubblicati dati incoerenti!
+                A titolo di esempio, si prendano i dati pubblicati dal parlamentare SANTANGELO Maurizio nel mese di Ottobre 2017
+                (<a href="http://www.tirendiconto.it/trasparenza/rendicontazione.php?user=152&mese=58&tipo=S" target="_blank">rinvenibili qui in originale</a>),
+                e si osservi come si dichiara dapprima che è stato effettuato un bonifico di restituzione per un importo TOTALE
+                di 1.800,00 Euro, mentre poi si afferma che, per la sola parte relativa all'indennità, è stato restituito
+                un importo pari a 1.931,25 Euro, che è chiaramente incompatibile con l'importo totale, essendo maggiore di esso.
+                In generale, la responsabilità di dati incoerenti/errati è sempre da attribuirsi a
+                <a href="http://www.tirendiconto.it/trasparenza/" target="_blank">TiRendiconto</a>,
+                dal momento che, come già affermato, CoRe M5S si limita a prelevare tali dati e ad aggregarli,
+                interamente in automatico, senza interventi manuali e senza operare alterazioni
+                di sorta sui dati medesimi (fatte salve le eccezioni descritte nella risposta alla domanda n. 6).
+                Altri esempi di dati incoerenti sono illustrati nella successiva risposta alla domanda n. 4.
+            </div>
+        </div>
+
+        <div class="ui inverted segment">
+            <h3 class="colored-info-title">4. Come vanno interpretati i dati nella pagina dei risultati?</h3>
             <h4 class="ui horizontal inverted divider"><i class="icon diamond"></i></h4>
             <div>
 
@@ -778,7 +805,24 @@
                     <i class="euro sign icon"></i>
                     <div class="content">
                         <div class="header">Seconda colonna</div>
-                        <div class="description">Contiene l'importo totale restituito, ovvero la quota stipendio restituita + la quota rimborsi restituita.</div>
+                        <div class="description">
+                            Contiene l'importo totale restituito, (idealmente) pari alla quota stipendio restituita +
+                            la quota rimborsi restituita. Questa voce rappresenta l'importo complessivo effettivamente restituito
+                            dal parlamentare.
+                            Si è tuttavia osservato che non sono infrequenti i casi in cui tale importo (che non viene calcolato
+                            da CoRe M5S, ma viene esso stesso prelevato da
+                            <a href="http://www.tirendiconto.it/trasparenza/" target="_blank">TiRendiconto</a>),
+                            non coincide con la somma predetta.
+                            All'origine di tali incongruenze si possono ipotizzare degli errori di trascrizione
+                            dei dati su <a href="http://www.tirendiconto.it/trasparenza/" target="_blank">TiRendiconto</a>,
+                            forse dovuti ad un'errata imputazione della voce relativa ai rimborsi con competenza plurimensile.
+                            A titolo di esempio, si prendano i dati pubblicati dal parlamentare FICO Roberto nel mese di Aprile 2015
+                            (<a href="http://www.tirendiconto.it/trasparenza/rendicontazione.php?user=55&mese=28&tipo=D" target="_blank">rinvenibili qui in originale</a>),
+                            e si osservi come l'importo totale restituito assommi a 9.446,58 Euro
+                            (peraltro coincidente con la distinta del bonifico in allegato), mentre le due voci relative allo stipendio (indennità)
+                            e ai rimborsi restituiti, presentino importi rispettivamente pari a 1.691,74 Euro e 3.058,84 Euro,
+                            che sommati tra loro danno un importo inferiore al totale pubblicato.
+                        </div>
                     </div>
                 </div>
                 <div class="item">
@@ -851,7 +895,9 @@
                     <i class="euro sign icon"></i>
                     <div class="content">
                         <div class="header">Seconda colonna</div>
-                        <div class="description">Contiene la parte dei rimborsi che viene restituita.</div>
+                        <div class="description">
+                            Contiene la parte dei rimborsi che è stata restituita.
+                        </div>
                     </div>
                 </div>
                 <div class="item">
@@ -873,7 +919,7 @@
         </div>
 
         <div class="ui inverted segment">
-            <h3>Cosa prescrive il regolamento del M5S riguardo le restituzioni?</h3>
+            <h3 class="colored-info-title">5. Cosa prescrive il regolamento del M5S riguardo le restituzioni?</h3>
             <h4 class="ui horizontal inverted divider"><i class="icon diamond"></i></h4>
             <div>
                 Le regole del M5S riguardo le restituzioni non sono del tutto chiare, ed esistono inoltre
@@ -885,7 +931,7 @@
         </div>
 
         <div class="ui inverted segment">
-            <h3>Sono emerse criticità particolari nel reperimento dei dati?</h3>
+            <h3 class="colored-info-title">6. Sono emerse criticità particolari nel reperimento dei dati?</h3>
             <h4 class="ui horizontal inverted divider"><i class="icon diamond"></i></h4>
             <div>
                 Limitatamente ai soli mesi di Marzo, Aprile e Maggio 2013 (ovvero i primi 3 mesi della legislatura), i dati presenti su
@@ -928,25 +974,7 @@
         </div>
 
         <div class="ui inverted segment">
-            <h3>Perché talvolta i dati delle rendicontazioni appaiono incoerenti?</h3>
-            <h4 class="ui horizontal inverted divider"><i class="icon diamond"></i></h4>
-            <div>
-                Perché il parlamentare in questione ha pubblicato dati incoerenti! A titolo di esempio, si prendano i dati
-                pubblicati dal parlamentare SANTANGELO Maurizio nel mese di Ottobre 2017
-                (<a href="http://www.tirendiconto.it/trasparenza/rendicontazione.php?user=152&mese=58&tipo=S" target="_blank">rinvenibili qui in originale</a>),
-                e si osservi come si dichiara dapprima che è stato effettuato un bonifico di restituzione per un importo TOTALE
-                di 1.800,00 Euro, mentre poi si afferma che, per la sola parte relativa all'indennità, è stato restituito
-                un importo pari a 1.931,25 Euro, che è chiaramente incompatibile con l'importo totale, essendo maggiore di esso.
-                In generale, la responsabilità di dati
-                incoerenti/errati è da attribuirsi al parlamentare o comunque al sistema di pubblicazione dei dati del M5S,
-                dal momento che, come già affermato, CoRe M5S si limita a prelevare tali dati e ad aggregarli, senza operare alterazioni
-                di sorta sui dati medesimi (fatte salve le eccezioni di cui alla risposta precedente).
-                Si precisa comunque che i casi di dati incoerenti/errati sono estremamente rari.
-            </div>
-        </div>
-
-        <div class="ui inverted segment">
-            <h3>Sono presenti tutti i parlamentari del M5S?</h3>
+            <h3 class="colored-info-title">7. Sono presenti tutti i parlamentari del M5S?</h3>
             <h4 class="ui horizontal inverted divider"><i class="icon diamond"></i></h4>
             <div>
                 Sì! Dalla versione 20.0.0.2018-01-15 (inclusa) in poi sono presenti tutti i 123 parlamentari del M5S.
@@ -954,7 +982,7 @@
         </div>
 
         <div class="ui inverted segment">
-            <h3>Come funziona la selezione delle date?</h3>
+            <h3 class="colored-info-title">8. Come funziona la selezione delle date?</h3>
             <h4 class="ui horizontal inverted divider"><i class="icon diamond"></i></h4>
             <div>
                 Premessa: i periodi rendicontati sono in generale differenti da parlamentare a parlamentare, a causa della
@@ -968,7 +996,7 @@
         </div>
 
         <div class="ui inverted segment">
-            <h3>CoRe M5S ospita della pubblicità?</h3>
+            <h3 class="colored-info-title">9. CoRe M5S ospita della pubblicità?</h3>
             <h4 class="ui horizontal inverted divider"><i class="icon diamond"></i></h4>
             <div>
                 No, CoRe M5S non ospita alcuna pubblicità né genera alcun tipo di introito, né diretto né indiretto.
@@ -976,7 +1004,7 @@
         </div>
 
         <div class="ui inverted segment">
-            <h3>L'esportazione dei risultati come immagine non funziona bene!</h3>
+            <h3 class="colored-info-title">10. L'esportazione dei risultati come immagine non funziona bene!</h3>
             <h4 class="ui horizontal inverted divider"><i class="icon diamond"></i></h4>
             <div>
                 Risposta breve: lo so. Risposta lunga: non è semplice da fare interamente lato client
@@ -993,7 +1021,7 @@
         </div>
 
         <div class="ui inverted segment">
-            <h3>Perché CoRe M5S usa i cookie, e quali?</h3>
+            <h3 class="colored-info-title">11. Perché CoRe M5S usa i cookie, e quali?</h3>
             <h4 class="ui horizontal inverted divider"><i class="icon diamond"></i></h4>
             <div>
                 CoRe M5S utilizza unicamente i cookie di Google Analytics, servizio che risulta di estrema utilità
@@ -1003,7 +1031,7 @@
         </div>
 
         <div class="ui inverted segment">
-            <h3>Perché CoRe M5S non espone API HTTP?</h3>
+            <h3 class="colored-info-title">12. Perché CoRe M5S non espone API HTTP?</h3>
             <h4 class="ui horizontal inverted divider"><i class="icon diamond"></i></h4>
             <div>
                 Perché si tratta di un'applicazione serverless, che gira per intero nel browser del client.
@@ -1018,7 +1046,7 @@
         </div>
 
         <div class="ui inverted segment">
-            <h3>Come si può contribuire al progetto?</h3>
+            <h3 class="colored-info-title">13. Come si può contribuire al progetto?</h3>
             <h4 class="ui horizontal inverted divider"><i class="icon diamond"></i></h4>
             <div>
                 <p>
@@ -1049,7 +1077,7 @@
         </div>
 
         <div class="ui inverted segment">
-            <h3>Posso utilizzare quest'applicazione in altri contesti e posso modificarla?</h3>
+            <h3 class="colored-info-title">14. Posso utilizzare quest'applicazione in altri contesti e posso modificarla?</h3>
             <h4 class="ui horizontal inverted divider"><i class="icon diamond"></i></h4>
             <div>
                 Risposta breve: sì. Risposta lunga: il codice sorgente di CoRe M5S è rilasciato sotto
@@ -1062,7 +1090,7 @@
         </div>
 
         <div class="ui inverted segment">
-            <h3>Che significato ha il numero di versione di CoRe M5S?</h3>
+            <h3 class="colored-info-title">15. Che significato ha il numero di versione di CoRe M5S?</h3>
             <h4 class="ui horizontal inverted divider"><i class="icon diamond"></i></h4>
             <div>
                 CoRe M5S usa il <a href="http://semver.org/" target="_blank">Semantic Versioning</a>, con l'aggiunta
@@ -1074,7 +1102,7 @@
         </div>
 
         <div class="ui inverted segment">
-            <h3>È disponibile un <em>changelog</em> dell'applicazione?</h3>
+            <h3 class="colored-info-title">16. È disponibile un <em>changelog</em> dell'applicazione?</h3>
             <h4 class="ui horizontal inverted divider"><i class="icon diamond"></i></h4>
             <div>
                 Il changelog dell'applicazione è dato dai messaggi di commit,
@@ -1103,7 +1131,8 @@
                 <i style="font-size: 2rem" id="user_name_results"></i>
                 <br>Importi <span id="result_type"></span>
                 <span id="initial_month_results"></span><span id="final_month_results"></span>
-                <br><span style="font-size:smaller">Fonte: <a href="http://www.tirendiconto.it/trasparenza/" target="_blank">TiRendiconto</a> 21/02/2018</span>
+                <br><span style="font-size:smaller">Fonte:
+                <a href="http://www.tirendiconto.it/trasparenza/" target="_blank">TiRendiconto</a> 25/02/2018</span>
             </span>
         </p>
         <h4 style="color: Yellow" id="mesi_presuntivi"></h4>
