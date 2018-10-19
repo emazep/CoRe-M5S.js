@@ -74,7 +74,7 @@ for row in people_table.findAll('tr'):
     for table_cell in row.findAll('td'):
         person = {}
         table_cell_a_tag = table_cell.a
-        person['fullname'] = table_cell_a_tag['title'] 
+        person['fullname'] = table_cell_a_tag['title']
         person_href = table_cell_a_tag['href'].split("'")[1]
         person['data'] = dict( parse_qsl( urlparse(person_href).query ) )
         persons[ person['data']['user'] ] = person
